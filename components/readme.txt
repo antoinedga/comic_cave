@@ -1,0 +1,1 @@
+just a folder for the header/footer, if you want to use it. Otherwise, delete this folder and the import statements
