@@ -8,7 +8,8 @@ if (isset($_GET['cid']) && filter_var($_GET['cid'], FILTER_VALIDATE_INT, array('
 	$cid = $_GET['cid'];
 	
 	// Get the comic info:
-	require ('../mysqli_connect.php'); // Connect to the database.
+	require ('mysqli_connect.php'); // Connect to the database.
+	// $conn = OpenCon();
 	$q = "SELECT CONCAT_WS(' ', first_name, last_name) AS artist, CONCAT_WS(' ', first_name, last_name) AS writer, publisher, comic_name, price, description, size, cover_image FROM artists, writers, publishers, comics WHERE artists.artist_id=comics.artist_id AND writers.writer_id=comics.writer_id AND publishers.publisher_id=comics.publisher_id AND comics.comic_id=$cid";
 	$r = mysqli_query ($dbc, $q);
 	if (mysqli_num_rows($r) == 1) 

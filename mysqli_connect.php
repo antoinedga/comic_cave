@@ -1,15 +1,20 @@
 <?php
-// contains database access information
-// establishes a connection to MySQL
-// selects database and sets encoding
 
-// set database access info
-DEFINE ('DB_USER', 'username');
-DEFINE ('DB_PASSWORD', 'password');
-DEFINE ('DB_HOST', 'localhost');
-DEFINE ('DB_NAME', 'sitename');
+	function OpenCon()
+	{
+		$dbhost = "localhost";
+		$dbuser = "usr";
+		$dbpass = "batpass";
+		$db = "comic_cave";
 
-// making connection
-$dbc = @myslqi_connect (DB_HOST, DB_USER, DB_PASSWORD, DB_NAME) OR die ('Could not connect to MySQL: ' . mysqli_connect_error());
+		$conn = new mysqli($dbhost, $dbuser, $dbpass,$db) or die("Connect failed: %s\n". $conn -> error);
 
-mysqli_set_charset($dbc, 'utf8');
+		return $conn;
+
+	}
+
+	function CloseCon($conn)
+	{
+		mysqli_close($conn);
+	}
+?>
