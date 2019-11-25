@@ -12,15 +12,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 { // Handle the form.
 	
 	// Check for a publisher...
-	if (!empty($_POST['publishers'])) 
+	if (!empty($_POST['publisher_name'])) 
 	{	
-		$pub = trim($_POST['publishers']);
+		$pub = trim($_POST['publisher_name']);
 		
 		// Add the publisher to the database:
-		require ('../../mysqli_connect.php');
-		$q = 'INSERT INTO publishers (publisher) VALUES (?)';
-		$stmt = mysqli_prepare($dbc, $q);
-		mysqli_stmt_bind_param($stmt, 'sss', $pub);
+		require ('../mysqli_connect.php');
+		$conn = OpenCon();
+		echo "Connected Successfully";
+		$q = 'INSERT INTO publishers (publisher_name) VALUES (?)';
+		$stmt = mysqli_prepare($conn, $q);
+		mysqli_stmt_bind_param($stmt, 's', $pub);
 		mysqli_stmt_execute($stmt);
 		
 		// Check the results....
@@ -36,10 +38,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		
 		// Close this prepared statement:
 		mysqli_stmt_close($stmt);
-		mysqli_close($dbc); // Close the database connection.
+		mysqli_close($conn); // Close the database connection.
 		
 	} 
-	else // No last name value.
+	else // No name value.
 	{ 
 		$error = 'Please enter the publisher\'s name!';
 	}
