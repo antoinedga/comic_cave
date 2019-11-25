@@ -20,10 +20,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form.
 		$ln = trim($_POST['last_name']);
 		
 		// Add the writer to the database:
-		require ('../../mysqli_connect.php');
+		require ('../mysqli_connect.php');
+		$conn = OpenCon();
+		echo "Connected Successfully";
 		$q = 'INSERT INTO writers (first_name, last_name) VALUES (?, ?)';
-		$stmt = mysqli_prepare($dbc, $q);
-		mysqli_stmt_bind_param($stmt, 'sss', $fn, $ln);
+		$stmt = mysqli_prepare($conn, $q);
+		mysqli_stmt_bind_param($stmt, 'ss', $fn, $ln);
 		mysqli_stmt_execute($stmt);
 		
 		// Check the results....
@@ -39,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Handle the form.
 		
 		// Close this prepared statement:
 		mysqli_stmt_close($stmt);
-		mysqli_close($dbc); // Close the database connection.
+		mysqli_close($conn); // Close the database connection.
 		
 	} 
 	else // No last name value.
