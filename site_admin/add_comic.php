@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	if (is_uploaded_file ($_FILES['image']['tmp_name'])) 
 	{
 		// Create a temporary file name:
-		$temp = '../../uploads/' . md5($_FILES['image']['name']);
+		$temp = '../uploads/' . md5($_FILES['image']['name']);
 	
 		// Move the file over:
 		if (move_uploaded_file($_FILES['image']['tmp_name'], $temp)) 
@@ -109,9 +109,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	if (empty($errors)) 
 	{ 
 		// Add the comic to the database:
-		$q = 'INSERT INTO comics (artist_id, writer_id, publisher_id, comic_name, price, description, image_name, quantity) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+		$q = 'INSERT INTO comics (artist_id, publisher_id, writer_id, comic_name, price, description, cover_image, quantity) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
 		$stmt = mysqli_prepare($conn, $q);
-		mysqli_stmt_bind_param($stmt, 'iiisdssi', $a, $w, $pub, $cn, $p, $d, $i, $quan);
+
+		// $stmt = mysqli_prepare($conn, "INSERT INTO comics (artist_id, publisher_id, writer_id, comic_name, price, description, cover_image, quantity) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+
+
+		mysqli_stmt_bind_param($stmt, 'iiisdssi', $a, $pub, $w, $cn, $p, $d, $i, $quan);
 		mysqli_stmt_execute($stmt);
 		
 		// Check the results...
@@ -122,7 +126,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	
 			// Rename the image:
 			$id = mysqli_stmt_insert_id($stmt); // Get the comic ID.
-			rename ($temp, "../../uploads/$id");
+			rename ($temp, "../uploads/$id");
 	
 			// Clear $_POST:
 			$_POST = array();
@@ -133,6 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			echo '<p style="font-weight: bold; color: #C00">Your submission could not be processed due to a system error.</p>'; 
 		}
 		mysqli_stmt_close($stmt);
+
 	}
 	
 	// Delete the uploaded file if it still exists:
@@ -220,7 +225,7 @@ if ( !empty($errors) && is_array($errors) )
 	} else {
 		echo '<option>Please add a new publisher first.</option>';
 	}
-	mysqli_close($conn); // Close the database connection.
+	// mysqli_close($conn); // Close the database connection.
 	?>
 	</select></p>
 	
