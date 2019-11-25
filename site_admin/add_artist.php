@@ -1,5 +1,5 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+			"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -7,6 +7,7 @@
 </head>
 <body>
 <?php # allows admin to add artist 
+
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') 
 { // Handle the form.
@@ -22,10 +23,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		$ln = trim($_POST['last_name']);
 		
 		// Add the artist to the database:
-		require ('../../mysqli_connect.php');
+		require ('../mysqli_connect.php');
+		$conn = OpenCon();
+		echo "Connected Successfully";
 		$q = 'INSERT INTO artists (first_name, last_name) VALUES (?, ?)';
-		$stmt = mysqli_prepare($dbc, $q);
-		mysqli_stmt_bind_param($stmt, 'sss', $fn, $ln);
+		$stmt = mysqli_prepare($conn, $q);
+		mysqli_stmt_bind_param($stmt, 'ss', $fn, $ln);
 		mysqli_stmt_execute($stmt);
 		
 		// Check the results....
@@ -41,7 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		
 		// Close this prepared statement:
 		mysqli_stmt_close($stmt);
-		mysqli_close($dbc); // Close the database connection.
+		mysqli_close($conn); // Close the database connection.
 		
 	} 
 	else // No last name value.
