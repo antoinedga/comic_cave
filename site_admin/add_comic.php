@@ -112,9 +112,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		$q = 'INSERT INTO comics (artist_id, publisher_id, writer_id, comic_name, price, description, cover_image, quantity) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
 		$stmt = mysqli_prepare($conn, $q);
 
-		// $stmt = mysqli_prepare($conn, "INSERT INTO comics (artist_id, publisher_id, writer_id, comic_name, price, description, cover_image, quantity) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-
-
 		mysqli_stmt_bind_param($stmt, 'iiisdssi', $a, $pub, $w, $cn, $p, $d, $i, $quan);
 		mysqli_stmt_execute($stmt);
 		
