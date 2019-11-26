@@ -51,7 +51,7 @@ while ($row = mysqli_fetch_array ($r, MYSQLI_ASSOC))
 	// echo [$a];
 	// Display each record:
 	echo "\t<tr>
-	<td align=\"left\"><a href=\"view_comic.php?pid={$row['comic_id']}\">{$row['comic_name']}</a></td>
+	<td align=\"left\"><a href=\"view_comic.php?cid={$row['comic_id']}\">{$row['comic_name']}</a></td>
 
 	<td align=\"left\"><a href=\"browse_comics.php?aid={$row['publisher_id']}\">{$row['publisher']}</a></td>
 	<td align=\"left\">{$row['description']}</td>
