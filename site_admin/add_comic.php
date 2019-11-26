@@ -105,14 +105,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		$errors[] = 'Please enter the comics\'s quantity!';
 	}
 
+
+	if ( isset($_POST['rel']) && filter_var($_POST['rel'], FILTER_VALIDATE_INT, array('min_range' => 1))  ) 
+	{
+		$rel = $_POST['rel'];
+	} 
+	else // No quantity entered. 
+	{ 
+		$errors[] = 'Please enter whether the comics\'s released or not!';
+	}
+
+	if ( isset($_POST['rec']) && filter_var($_POST['rec'], FILTER_VALIDATE_INT, array('min_range' => 1))  ) 
+	{
+		$rec = $_POST['rec'];
+	} 
+	else // No quantity entered. 
+	{ 
+		$errors[] = 'Please enter if the comics\'s recommended!';
+	}
 	// If no errors..
 	if (empty($errors)) 
 	{ 
 		// Add the comic to the database:
-		$q = 'INSERT INTO comics (artist_id, publisher_id, writer_id, comic_name, price, description, cover_image, quantity) VALUES (?, ?, ?, ?, ?, ?, ?, ?)';
+		$q = 'INSERT INTO comics (artist_id, publisher_id, writer_id, comic_name, price, description, cover_image, quantity, released, recommended) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
 		$stmt = mysqli_prepare($conn, $q);
 
-		mysqli_stmt_bind_param($stmt, 'iiisdssi', $a, $pub, $w, $cn, $p, $d, $i, $quan);
+		mysqli_stmt_bind_param($stmt, 'iiisdssiii', $a, $pub, $w, $cn, $p, $d, $i, $quan, $rec, $rel);
 		mysqli_stmt_execute($stmt);
 		
 		// Check the results...
@@ -231,6 +249,24 @@ if ( !empty($errors) && is_array($errors) )
 	<p><b>Quantity:</b> <input type="text" name="quan" size="30" maxlength="10" value="<?php if (isset($_POST['quan'])) echo $_POST['quan']; ?>" /> Quantity in stock</p>
 	
 	<p><b>Description:</b> <textarea name="description" cols="40" rows="5"><?php if (isset($_POST['description'])) echo $_POST['description']; ?></textarea> (optional)</p>
+
+	<p><b>Released:</b> <input type="text" name="rel" size="30" maxlength="10" value="<?php if (isset($_POST['rel'])) echo $_POST['rel']; ?>" /> 1 if released, otherwise 0</p>
+
+	<p><b>Recommended:</b> <input type="text" name="rec" size="30" maxlength="10" value="<?php if (isset($_POST['rec'])) echo $_POST['rec']; ?>" /> 1 if recommended, otherwise 0</p>
+
+	<!-- <p><b>Released:</b></br> <form>
+	<input type="radio" name="rel" value="1"> true<br>
+	<input type="radio" name="rel" value="0" checked> false
+	<?php if (isset($_POST['rel'])) echo $_POST['rel']; ?>
+	</form>
+
+	</p>
+
+	<p><b>Recommended:</b> <form>
+	<input type="radio" name="rec" value="1" checked> true<br>
+	<input type="radio" name="rec" value="0"> false
+	<?php if (isset($_POST['rec'])) echo $_POST['rec']; ?></form>
+	</p> -->
 	
 	</fieldset>
 		
