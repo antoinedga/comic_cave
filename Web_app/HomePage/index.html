@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+          <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+      <!-- Popper JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <link rel="stylesheet" href="skeleton.css">
+      <link rel="stylesheet" href="index.css">
+      <title>Comic Cave</title>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-default navbar-expand-sm bg-dark text-white fixed-top container-fluid">
+      <div class="container-fluid justify-content-center">
+        <div class="navbar-nav">
+            <h1 class="display-2 text-light">Comic cave!</h1>
+
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid" id="content">
+      <h1 class="text-light row justify-content-center">Publishers We carry</h1>
+      <div id="publisher" class="row scroll-wrapper" >
+        <img src="publisher_img/marv.png" class=" col-4" alt="Cinque Terre">
+        <img src="publisher_img/dc.png" class="col-4" alt="Cinque Terre">
+        <img src="publisher_img/idw.png" class=" col-4" alt="Cinque Terre">
+        <img src="publisher_img/DarkHourseComics.png" class="col-4" alt="cinque terra">
+        <img src="publisher_img/image.png" class="col-4" alt="sads">
+        <img src="publisher_img/valiant.jpeg" class="col-4" alt="valiant">
+        <img src="publisher_img/dynamite.png" class="col-4" alt="dynamite">
+      </div>
+      <div class="container">
+        <div class="row writing">
+          <p>  Currently, we do not have a Full store webpage, Please checkout our mobile app in the Android and Google play store!
+            <br>Thank you!
+            <br><br>-Sincerely,<br>Your favorite comic book store
+          </p>
+        </div>
+
+        <div class="row List_comics">
+          <div class="container-fluid">
+              <nav class="container">
+                <ul class="nav nav-tabs nav-fill">
+                  <li class="nav-item active"><a data-toggle="tab" href="#home">Upcoming</a></li>
+                  <li class="nav-item"><a data-toggle="tab" href="#menu1">Previous</a></li>
+                  <li class="nav-item"><a data-toggle="tab" href="#menu2">Future</a></li>
+                </ul>
+
+                <div class="tab-content">
+                  <div class="tab-pane fade show active" id="home">
+                    <h3>This Week Releases</h3>
+                    <table id="table_comic">
+                      <thead class="u-full-width">
+                          <tr>
+                            <th>Publisher</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                          </tr>
+                      </thead>
+                        <tbody id='table_content' class="container-fluid">
+
+                        </tbody>
+                    </table>
+                  </div>
+                  <div id="menu1" class="tab-pane fade">
+                    <h3>Previous Releases</h3>
+                    <table class="u-full-width">
+                      <thead>
+                          <tr>
+                            <th>Publisher</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                          </tr>
+                          <tbody>
+
+                          </tbody>
+                      </thead>
+                    </table>
+                  </div>
+                  <div id="menu2" class="tab-pane fade">
+                    <h3>Future releases</h3>
+                    <table class="u-full-width">
+                      <thead>
+                          <tr>
+                            <th>Publisher</th>
+                            <th>Title</th>
+                            <th>Date</th>
+                          </tr>
+                          <tbody>
+
+                          </tbody>
+                      </thead>
+                    </table>
+                  </div>
+                </div>
+              </nav>
+          </div>
+        </div>
+
+      </div>
+
+
+      <footer class="container-fluid padding">
+        <div class="row justify-content-center">
+          <div class="contant_us container col-6">
+            <h5>Contact US</h5>
+            <ul>
+              <li><a href="#">comicCave@gmail.com</a></li>
+            </ul>
+
+          </div>
+          <div class="col-6 payment">
+            <h5>Accepted payments</h5>
+            <ul id="list_of_payment">
+              <li class="	fa fa-cc-amex"></li>
+              <li class="	fa fa-cc-visa"></li>
+              <li class="	fa fa-cc-discover"></li>
+              <li class="	fa fa-cc-mastercard	"></li>
+            </ul>
+          </div>
+
+        </div>
+      </footer>
+
+    </div>
+<script src="index.js"></script>
+
+  </body>
