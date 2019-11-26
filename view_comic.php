@@ -9,10 +9,18 @@ if (isset($_GET['cid']) && filter_var($_GET['cid'], FILTER_VALIDATE_INT, array('
 	
 	// Get the comic info:
 	require ('mysqli_connect.php'); // Connect to the database.
+	$conn = OpenCon();
+	// echo "Connected Successfully";
 	// $conn = OpenCon();
-	$q = "SELECT CONCAT_WS(' ', first_name, last_name) AS artist, CONCAT_WS(' ', first_name, last_name) AS writer, publisher, comic_name, price, description, size, cover_image FROM artists, writers, publishers, comics WHERE artists.artist_id=comics.artist_id AND writers.writer_id=comics.writer_id AND publishers.publisher_id=comics.publisher_id AND comics.comic_id=$cid";
-	$r = mysqli_query ($dbc, $q);
-	if (mysqli_num_rows($r) == 1) 
+	$q = "SELECT CONCAT_WS(' ', first_name, last_name) AS artist, 
+	-- CONCAT_WS(' ', first_name, last_name) AS writer, publisher, 
+	comic_name, price, description, cover_image, quantity FROM artists, comics WHERE 
+	-- artists.artist_id=comics.artist_id AND 
+	-- writers.writer_id=comics.writer_id AND 
+	-- publishers.publisher_id=comics.publisher_id AND 
+	comics.comic_id=$cid";
+	$r = mysqli_query ($conn, $q);
+	if (mysqli_num_rows($r) > 0) 
 	{ // Good to go!
 		// Fetch the information:
 		$row = mysqli_fetch_array ($r, MYSQLI_ASSOC);
@@ -24,10 +32,10 @@ if (isset($_GET['cid']) && filter_var($_GET['cid'], FILTER_VALIDATE_INT, array('
 		// Display a header:
 		echo "<div align=\"center\">
 		<b>{$row['comic_name']}</b> illustrated by 
-		{$row['artist']} and written by {$row['writer']}<br />";
+		{$row['artist']}<br />";
 
 		// Print the quantity or a default message:
-		echo (is_null($row['quantity'])) ? '(No stock information available)' : $row['quantity'];
+		// echo (is_null($row['quantity'])) ? '(No stock information available)' : $row['quantity'];
 
 		// TODO: may change w/ Stripe integration
 		echo "<br />\${$row['price']} 
@@ -35,9 +43,9 @@ if (isset($_GET['cid']) && filter_var($_GET['cid'], FILTER_VALIDATE_INT, array('
 		</div><br />";
 	
 		// Get the image information and display the image:
-		if ($image = @getimagesize ("../uploads/$cid")) 
+		if ($image = @getimagesize ("./uploads/$cid")) 
 		{
-			echo "<div align=\"center\"><img src=\"show_image.php?image=$cid&name=" . urlencode($row['image_name']) . "\" $image[3] alt=\"{$row['comic_name']}\" /></div>\n";	
+			echo "<div align=\"center\"><img src=\"show_image.php?image=$cid&name=" . urlencode($row['cover_image']) . "\" $image[3] alt=\"{$row['comic_name']}\" /></div>\n";	
 		} 
 		else 
 		{
@@ -48,14 +56,14 @@ if (isset($_GET['cid']) && filter_var($_GET['cid'], FILTER_VALIDATE_INT, array('
 		echo '<p align="center">' . ((is_null($row['description'])) ? '(No description available)' : $row['description']) . '</p>';
 	}
 	
-	mysqli_close($dbc);
+	mysqli_close($conn);
 
 } 
 
 if (!$row) 
 { // Show an error message.
 	$page_title = 'Error';
-	include ('includes/header.html');
+	// include ('includes/header.html');
 	echo '<div align="center">This page has been accessed in error!</div>';
 }
 
