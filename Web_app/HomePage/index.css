@@ -4,40 +4,63 @@
 }
 
 nav{
+  font-size: 1rem;
   background-image: linear-gradient(to bottom, rgba(255,0,0,1), rgba(255,0,0,.3)); /* Standard syntax (must be last) */
+}
+.navbar-nav{
+  height: 6rem;
 }
 
 body{
-  overflow-y: auto;
+  padding-top: 7rem;
+  min-height: 100vh;
+  margin: 0;
+  width: 100%;
 }
-
 
 
 ul{
   list-style: none;
 }
-
+table{
+  table-layout:fixed;
+  display: table;
+  width: 100%;
+  overflow-y: auto;
+}
 thead{
   width: 100%;
-  justify-content: space-between;
   display: block;
+  align:justify;
+}
+th{
+  align: justify;
+  display: inline;
+  width: 100%;
+}
+#table_comic{
+  width: 100vh;
+  height: 40vh;
+  overflow: auto;
 }
 
 #table_content{
   display: table;
   font-weight: bold;
-  height: 40vh;
+  position: relative;
+  height: 400px;
   overflow-y: auto;
   width: 100%;
 }
 tr{
   display: table-row;
-
+}
+.List_comics{
+  height: 40vh;
+  padding-bottom: 40px;
 }
 
 footer{
-  left: 0;
-  bottom: 0;
   width: 100%;
   background-color: #adaca8;
   color: white;
@@ -51,19 +74,24 @@ a{
   color: white;
 }
 
-
 h1{
   font-family: bubble;
   text-shadow: 3px 3px #808080;
   opacity: 1;
 }
 body{
+  height: 100vh;
+  width: 100vw;
   background: #848c8e;
+  position: relative;
 }
 #content{
   background: #343434;
   height: 100vh;
-  margin-top:145px;
+  margin-bottom: 30px;
+  display: contents;
+  position: relative;
+  margin-top:400px;
 }
 
 
