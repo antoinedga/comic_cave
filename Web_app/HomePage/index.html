@@ -19,7 +19,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
         <link rel="stylesheet" href="skeleton.css">
-      <link rel="stylesheet" href="index.css">
+      <link rel="stylesheet" href="ind.css">
       <title>Comic Cave</title>
   </head>
   <body>
@@ -28,17 +28,18 @@
       <div class="container-fluid justify-content-center">
         <div class="navbar-nav">
             <h1 class="display-2 text-light">Comic cave!</h1>
+
         </div>
       </div>
     </nav>
 
-    <div class="container-fluid row" id="content">
+    <div class="container-fluid" id="content">
       <h1 class="text-light row justify-content-center">Publishers We carry</h1>
       <div id="publisher" class="row scroll-wrapper" >
-        <img src="publisher_img/marv.png" class=" col-4" alt="Cinque Terre">
-        <img src="publisher_img/dc.png" class="col-4" alt="Cinque Terre">
+        <img src="publisher_img/marvel.jpg" class=" col-4" alt="Cinque Terre">
+        <img src="publisher_img/dc1.png" class="col-4" alt="Cinque Terre">
         <img src="publisher_img/idw.png" class=" col-4" alt="Cinque Terre">
-        <img src="publisher_img/DarkHourseComics.png" class="col-4" alt="cinque terra">
+        <img src="publisher_img/DarkHorse.jpg" class="col-4" alt="cinque terra">
         <img src="publisher_img/image.png" class="col-4" alt="sads">
         <img src="publisher_img/valiant.jpeg" class="col-4" alt="valiant">
         <img src="publisher_img/dynamite.png" class="col-4" alt="dynamite">
@@ -51,9 +52,9 @@
           </p>
         </div>
 
-        <div class="row List_comics justify-content-center">
-          <div class="container-fluid col">
-              <nav class="container-fluid">
+        <div class="row List_comics">
+          <div class="container-fluid">
+              <nav class="container">
                 <ul class="nav nav-tabs nav-fill">
                   <li class="nav-item active"><a data-toggle="tab" href="#home">Upcoming</a></li>
                   <li class="nav-item"><a data-toggle="tab" href="#menu1">Previous</a></li>
@@ -61,49 +62,41 @@
                 </ul>
 
                 <div class="tab-content">
-                  <div class="tab-pane fade show active" id="home">
-                    <h3>This Week Releases</h3>
-                    <table id="table_comic" class="container-fluid table-responsive">
-                      <thead class="container">
-                          <tr>
-                            <th>Publisher</th>
-                            <th>Title</th>
-                            <th>Date</th>
-                          </tr>
-                      </thead>
+                  <div class="tab-pane fade show active" id="home" style="width: 763px; height: 371px; overflow-y: scroll;">
+                    <h3>This Week's Releases</h3>
+                    <table id="table_comic">
                         <tbody id='table_content' class="container-fluid">
-
+							<tr>
+								<th>Publisher</th>
+								<th>Title</th>
+								<th>Date</th>
+							</tr>
                         </tbody>
                     </table>
                   </div>
                   <div id="menu1" class="tab-pane fade">
                     <h3>Previous Releases</h3>
                     <table class="u-full-width">
-                      <thead>
-                          <tr>
-                            <th>Publisher</th>
-                            <th>Title</th>
-                            <th>Date</th>
-                          </tr>
-                          <tbody>
-
-                          </tbody>
-                      </thead>
+                          
+                         <tbody>
+							<tr>
+								<th>Publisher</th>
+								<th>Title</th>
+								<th>Date</th>
+							</tr>
+                         </tbody>
                     </table>
                   </div>
                   <div id="menu2" class="tab-pane fade">
                     <h3>Future releases</h3>
                     <table class="u-full-width">
-                      <thead>
-                          <tr>
-                            <th>Publisher</th>
-                            <th>Title</th>
-                            <th>Date</th>
-                          </tr>
-                          <tbody>
-
-                          </tbody>
-                      </thead>
+                         <tbody>
+							<tr>
+								<th>Publisher</th>
+								<th>Title</th>
+								<th>Date</th>
+							</tr>
+                         </tbody>
                     </table>
                   </div>
                 </div>
@@ -112,33 +105,31 @@
         </div>
 
       </div>
-    </div>
 
-    <div class="container-fluid page-footer">
-        <footer class="container-fluid">
-          <div class="row justify-content-center">
-            <div class="contant_us col-6">
-              <h5>Contact US</h5>
-              <ul>
-                <li><a href="#">comicCave@gmail.com</a></li>
-              </ul>
 
-            </div>
-            <div class="col-6 payment">
-              <h5>Accepted payments</h5>
-              <ul id="list_of_payment">
-                <li class="	fa fa-cc-amex"></li>
-                <li class="	fa fa-cc-visa"></li>
-                <li class="	fa fa-cc-discover"></li>
-                <li class="	fa fa-cc-mastercard	"></li>
-              </ul>
-            </div>
+      <footer class="container-fluid padding">
+        <div class="row justify-content-center">
+          <div class="contant_us container col-6">
+            <h5>Contact US</h5>
+            <ul>
+              <li><a href="#">comicCave@gmail.com</a></li>
+            </ul>
 
           </div>
-        </footer>
-      </div>
+          <div class="col-6 payment">
+            <h5>Accepted payments</h5>
+            <ul id="list_of_payment">
+              <li class="	fa fa-cc-amex"></li>
+              <li class="	fa fa-cc-visa"></li>
+              <li class="	fa fa-cc-discover"></li>
+              <li class="	fa fa-cc-mastercard	"></li>
+            </ul>
+          </div>
 
+        </div>
+      </footer>
 
-    <script src="index.js"></script>
+    </div>
+<script src="in.js"></script>
 
   </body>

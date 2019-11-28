@@ -1,0 +1,98 @@
+@font-face {
+  font-family: bubble;
+  src: url(custom_font/bubblegumsans-regular.woff);
+}
+
+nav{
+  background-image: linear-gradient(to bottom, rgba(255,0,0,1), rgba(255,0,0,.3)); /* Standard syntax (must be last) */
+}
+
+body{
+  overflow-y: auto;
+}
+
+
+
+ul{
+  list-style: none;
+}
+
+thead{
+  width: 100%;
+  justify-content: space-between;
+  display: block;
+}
+
+#table_content{
+  display: table;
+  font-weight: bold;
+  height: 40vh;
+  overflow-y: auto;
+  width: 100%;
+}
+tr{
+  display: table-row;
+
+}
+
+footer{
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #adaca8;
+  color: white;
+  text-align: center;
+}
+
+#list_of_payment{
+  font-size: 1.5em;
+}
+a{
+  color: white;
+}
+
+
+h1{
+  font-family: bubble;
+  text-shadow: 3px 3px #808080;
+  opacity: 1;
+}
+body{
+  background: #848c8e;
+}
+#content{
+  background: #343434;
+  height: 100vh;
+  margin-top:145px;
+}
+
+
+#publisher{
+  margin-left:50px;
+  margin-right:50px;
+  height: 225px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  float: none;
+  background: #e0d4d3;
+   border-radius: 25px;
+}
+img{
+  margin: 20px;
+  border-radius: 20%;
+  height: 150px;
+}
+
+.writing{
+color: white;
+padding: 30px;
+text-align: center;
+font-family: Arial Rounded MT Bold;
+font-size: 1.5em;
+}
+
+.navbar-nav{
+  height: 6rem;
+}
