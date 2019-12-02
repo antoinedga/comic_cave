@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		// Move the file over:
 		if (move_uploaded_file($_FILES['image']['tmp_name'], $temp))
 		{
-
+			// FIXME: need to store as image name
 			// Set the $i variable to the image's name:
 			$i = $_FILES['image']['name'];
 		}
