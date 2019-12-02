@@ -1,7 +1,7 @@
 <?php # displays the details for a particular comic
 $row = FALSE; // Assume nothing!
 
-	$cid = $_GET['cid'];
+	$cid = $_GET['comic_id'];
 
 	// Get the comic info:
 	require ('../mysqli_connect.php'); // Connect to the database.
@@ -17,10 +17,10 @@ $row = FALSE; // Assume nothing!
 	writers.writer_id=comics.writer_id AND
 	publishers.publisher_id=comics.publisher_id AND
 	comics.comic_id=$cid";
-	
+
 	$r = mysqli_query ($conn, $q);
   $row = mysqli_fetch_array($r);
-  echo json_encode($r);
+  echo json_encode($row);
   mysqli_close($conn);
 
 

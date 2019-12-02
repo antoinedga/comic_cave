@@ -25,7 +25,7 @@ function view_single_comic(id){
     $.ajax({
      type: "GET",
      url: "../site_admin/view_single_comic.php",
-     data: {cid: id},
+     data: {comic_id: id},
      cache:false,
      dataType:"json",
      success: function(data){
