@@ -1,5 +1,5 @@
 <?php # login script 
-
+session_start();
 $page_title = 'Login';
 $loggedin = false;
 $error = false;
