@@ -120,12 +120,12 @@ var opt = document.createElement('option');
 
 
  $(document).ready(function(){
-   get_browse();
+   get_inventory();
      return false;
    });
 
 
- function get_browse(){
+ function get_inventory(){
     $.ajax({
      type: "GET",
      url: "../site_admin/inventory.php",
@@ -155,7 +155,7 @@ var opt = document.createElement('option');
  var quantity = row.insertCell(4);
  var button = row.insertCell(5);
  var x = document.createElement("button");
-x.setAttribute("onclick",  view_single_comic(comic.comic_id));
+ x.setAttribute("onclick",  view_single_comic(comic.comic_id));
  button.appendChild(x);
 
  // Add some text to the new cells:
