@@ -1,0 +1,25 @@
+#left{
+  height: 100vh;
+}
+#selectable_body .ui-selecting { background: #FECA40; }
+#selectable_body .ui-selected { background: #F39814; color: white; }
+#selectable_body .ui-unselected{background: white;}
+
+tbody{
+  display: block;
+  height: 900px;
+  overflow: auto;
+}
+thead, tbody tr {
+  display: table;
+  width: 100%;
+}
+
+body {
+   overflow-y: hidden;
+   overflow-x: hidden; /* hides the horizontal scroll bar */
+}
+
+.dropdown-menu {
+    text-align: center;
+}
