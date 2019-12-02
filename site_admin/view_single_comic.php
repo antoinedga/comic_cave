@@ -4,7 +4,7 @@ $row = FALSE; // Assume nothing!
 	$cid = $_GET['cid'];
 
 	// Get the comic info:
-	require ('mysqli_connect.php'); // Connect to the database.
+	require ('../mysqli_connect.php'); // Connect to the database.
 	$conn = OpenCon();
 	// echo "Connected Successfully";
 	// $conn = OpenCon();
