@@ -26,7 +26,7 @@ writers,
 publishers,
 comics
 WHERE
-artists.artist_id = comics.artist_id AND writers.writer_id = comics.writer_id AND publishers.publisher_id = comics.publisher_id
+artists.artist_id = comics.artist_id AND writers.writer_id = comics.writer_id AND publishers.publisher_id = comics.publisher_id AND released = 1
 ORDER BY
     comics.comic_name
 ");	
