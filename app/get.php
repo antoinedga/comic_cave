@@ -26,9 +26,10 @@ writers,
 publishers,
 comics
 WHERE
-artists.artist_id = comics.artist_id AND writers.writer_id = comics.writer_id AND publishers.publisher_id = comics.publisher_id AND recommended = 1
+artists.artist_id = comics.artist_id AND writers.writer_id = comics.writer_id AND publishers.publisher_id = comics.publisher_id
 ORDER BY
-comics.comic_name");	
+    comics.comic_name
+");	
 // $stm = $db->prepare($query);
 // $stm->execute();
 // $row = $stm->fetch(PDO::FETCH_ASSOC);

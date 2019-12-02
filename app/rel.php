@@ -1,7 +1,7 @@
 <?php
 require ('../mysqli_connect.php');
 $conn = OpenCon();
-require_once('../db.php');
+require_once('db.php');
 $query = mysqli_query($conn, "SELECT
 CONCAT_WS(
 	 ' ',
