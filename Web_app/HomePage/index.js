@@ -11,27 +11,29 @@ Headers: new Headers({'Content-Type': 'application/json',
 };
 
 
-async function get()
+async function get(url, tableID)
 {
   var data;
   var com;
   try {
-    await fetch(proxyurl + 'https://api.shortboxed.com/comics/v1/new').then(async function(res){
+    await fetch(proxyurl + url).then(async function(res){
     data = await res.json();
     com = data.comics;
-    com.forEach(res => insert_table(res));
+    com.forEach(res => insert_table(res, tableID));
     console.log(data.comics);
   });
   } catch(err) {
     console.log(err); // Failed to fetch
   }
 }
-get();
+get('https://api.shortboxed.com/comics/v1/new', "table_content1");
+get('https://api.shortboxed.com/comics/v1/future', "table_content1");
+get('https://api.shortboxed.com/comics/v1/previous', "table_content2");
 
-function insert_table(item)
+function insert_table(item, tableID)
 {
     // Find a <table> element with id="myTable":
-    var table = document.getElementById("table_content");
+    var table = document.getElementById(tableID);
 
     // Create an empty <tr> element and add it to the 1st position of the table:
     var row = table.insertRow();
