@@ -4,17 +4,20 @@
 
 // select Functionality for the inventory table
 // maybe to add an update feature
-$( function() {
-   $( "#selectable_body").selectable(
-     {
-     filter: 'tr',
-     selected: function() {
-                  $( ".ui-selected", this ).each(function() {
-                  var value = $(this).attr('value');
-                  });
-    }
-  });
- });
+
+
+
+// $( function() {
+//    $( "#selectable_body").selectable(
+//      {
+//      filter: 'tr',
+//      selected: function() {
+//                   $( ".ui-selected", this ).each(function() {
+//                   var value = $(this).attr('value');
+//                   });
+//     }
+//   });
+//  });
 
 // to view a single comics more detail, does a get request, populate the modal
 // and shows it
