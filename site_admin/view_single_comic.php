@@ -19,7 +19,7 @@ $row = FALSE; // Assume nothing!
 	comics.comic_id=$cid";
 
 	$r = mysqli_query ($conn, $q);
-  $row = mysqli_fetch_array($r);
+  $row = mysqli_fetch_assoc($r);
   echo json_encode($row);
   mysqli_close($conn);
 
