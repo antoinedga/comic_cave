@@ -1,0 +1,272 @@
+
+$( function() {
+   $( "#selectable_body").selectable(
+     {
+     filter: 'tr',
+     selected: function() {
+                  $( ".ui-selected", this ).each(function() {
+                  var value = $(this).attr('value');
+                  $("#view").attr("onclick", "view_comic.php?cid=" + value);
+                  });
+    }
+  });
+ });
+
+function view_single_comic(id){
+    $.ajax({
+     type: "GET",
+     url: "../site_admin/comic_modal.php",
+     data: {cid: id},
+     cache:false,
+     dataType:"json",
+     success: function(data){
+       document.getElementById("comic_holder").innerHTML = data.comic_name;
+       document.getElementById("art_holder").innerHTML = data.artists;
+       document.getElementById("pub_holder").innerHTML = data.publisher;
+       document.getElementById("price_holder").innerHTML = data.price;
+       document.getElementById("quan_holder").innerHTML = data.quanity;
+       document.getElementById("wri_holder").innerHTML = data.writer;
+       document.getElementById("description").innerHTML = data.description;
+        $('#view_comic').modal('show');
+
+    },
+     error: function(err){
+       alert("Error getting fields for comics");
+       console.log(err);
+     }
+   });
+ }
+
+function drop_down_publisher(order, index){
+
+    // Find a <table> element with id="myTable":
+var table = document.getElementById("publisher_selecter");
+var opt = document.createElement('option');
+ // Create an empty <tr> element and add it to the 1st position of the table:
+ opt.value = order[0];
+ opt.innerHTML = order[1];
+ table.add(opt);
+}
+
+function drop_down_artist(order, index){
+
+    // Find a <table> element with id="myTable":
+var table = document.getElementById("artist_selecter");
+var opt = document.createElement('option');
+ // Create an empty <tr> element and add it to the 1st position of the table:
+ opt.value = order[0];
+ opt.innerHTML = order[1];
+ table.add(opt);
+}
+
+function drop_down_writer(order, index){
+
+    // Find a <table> element with id="myTable":
+var table = document.getElementById("writer_selecter");
+var opt = document.createElement('option');
+ // Create an empty <tr> element and add it to the 1st position of the table:
+ opt.value = order[0];
+ opt.innerHTML = order[1];
+ table.add(opt);
+}
+
+
+ $(document).ready(function(){
+   field_for_comic();
+     return false;
+   });
+
+
+ function field_for_comic(){
+    $.ajax({
+     type: "GET",
+     url: "../site_admin/comic_modal.php",
+     cache:false,
+     dataType:"json",
+     success: function(data){
+       data[0].forEach(drop_down_publisher);
+       data[1].forEach(drop_down_artist);
+       data[2].forEach(drop_down_writer);
+    },
+     error: function(err){
+       alert("Error getting fields for comics");
+       console.log(err);
+     }
+   });
+ }
+
+ function table_row_order(order, index){
+
+    // Find a <table> element with id="myTable":
+ var table = document.getElementById("order_list");
+ // Create an empty <tr> element and add it to the 1st position of the table:
+ var row = table.insertRow(index);
+
+ // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+ var comicName = row.insertCell(0);
+ var quantity = row.insertCell(1);
+ var email = row.insertCell(2);
+ var total = row.insertCell(3);
+ var orderDate = row.insertCell(4);
+
+ // Add some text to the new cells:
+ comicName.innerHTML = order.publisher;
+ quantity.innerHTML = order.writer;
+ email.innerHTML = order.artist;
+ total.innerHTML = order.comic_name;
+ orderDate.innerHTML = order.quantity;
+}
+
+
+
+ $(document).ready(function(){
+   get_browse();
+     return false;
+   });
+
+
+ function get_browse(){
+    $.ajax({
+     type: "GET",
+     url: "../site_admin/inventory.php",
+     cache:false,
+     dataType:"json",
+     success: function(data){
+      data.forEach(table_row);
+    },
+     error: function(){
+       alert("Error getting inventory!");
+     }
+   });
+ }
+
+ function table_row(comic, index){
+
+    // Find a <table> element with id="myTable":
+ var table = document.getElementById("selectable_body");
+ // Create an empty <tr> element and add it to the 1st position of the table:
+ var row = table.insertRow(index);
+ row.setAttribute("value",comic.comic_id)
+ // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
+ var publisher = row.insertCell(0);
+ var author = row.insertCell(1);
+ var artist = row.insertCell(2);
+ var title = row.insertCell(3);
+ var quantity = row.insertCell(4);
+ var button = row.insertCell(5);
+ var x = document.createElement("button");
+ x.setAttribute("onclick", "view_single_comic(" + comic.comic_id +")");
+ x.innerHTML = "<i class=\"fa fa-info-circle\" aria-hidden=\"true\oilo,,"></i>"
+ button.appendChild(x);
+
+ // Add some text to the new cells:
+ publisher.innerHTML = comic.publisher;
+ author.innerHTML = comic.writer;
+ artist.innerHTML = comic.artist;
+ title.innerHTML = comic.comic_name;
+ quantity.innerHTML = comic.quantity;
+}
+
+ $(document).ready(function(){
+ 	$("#artistForm").submit(function(event){
+ 		submitForm_artist();
+ 		return false;
+ 	});
+ });
+
+
+ function submitForm_artist(){
+ 	 $.ajax({
+ 		type: "POST",
+ 		url: "../site_admin/add_artist.php",
+ 		cache:false,
+ 		data: $('form#artistForm').serialize(),
+ 		success: function(response){
+ 			//$("#artist").html(response)
+ 			$("#add_artist").modal('hide');
+      alert( "Successfully added an Artist");
+ 		},
+ 		error: function(){
+ 			alert("Error");
+ 		}
+ 	});
+ }
+
+
+  $(document).ready(function(){
+  	$("#authorForm").submit(function(event){
+  		submitForm_author();
+  		return false;
+  	});
+  });
+
+
+  function submitForm_author(){
+  	 $.ajax({
+  		type: "POST",
+  		url: "../site_admin/add_writer.php",
+  		cache:false,
+  		data: $('form#authorForm').serialize(),
+  		success: function(response){
+  			//$("#artist").html(response)
+  		$("#add_author").modal('hide');
+       alert("Successfully added an Writer");
+  		},
+  		error: function(){
+  			alert("Error adding writer");
+  		}
+  	});
+  }
+
+
+  $(document).ready(function(){
+  	$("#publisherForm").submit(function(event){
+  		submitForm_publisher();
+  		return false;
+  	});
+  });
+
+
+  function submitForm_publisher(){
+  	 $.ajax({
+  		type: "POST",
+  		url: "../site_admin/add_publisher.php",
+  		cache:false,
+  		data: $('form#publisherForm').serialize(),
+  		success: function(response){
+  			//$("#artist").html(response)
+  		$("#add_publisher").modal('hide');
+        alert( "Successfully added a Publisher");
+  		},
+  		error: function(){
+  			alert("Error adding publisher");
+  		}
+  	});
+  }
+
+
+    $(document).ready(function(){
+    	$("#comicForm").submit(function(event){
+    		submitForm_comic();
+    		return false;
+    	});
+    });
+
+
+    function submitForm_comic(){
+    	 $.ajax({
+    		type: "POST",
+    		url: "../site_admin/add_comic.php",
+    		cache:false,
+    		data: $('form#comicForm').serialize(),
+    		success: function(response){
+    			//$("#artist").html(response)
+    		$("#add_comic").modal('hide');
+        alert( "Successfully added a comic");
+    		},
+    		error: function(err){
+    			alert(err);
+
+    		}
+    	});
+    }
