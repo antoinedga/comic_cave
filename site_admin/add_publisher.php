@@ -53,9 +53,21 @@ if (isset($error))
 	<p style="font-weight: bold; color: #C00">' . $error . ' Please try again.</p>';
 }
 
+// Display the form...
 ?>
+<!-- <h1>Add a Publisher</h1>
+<form action="add_publisher.php" method="post">
 
-	<?php if (isset($_POST['publisher'])) echo $_POST['publisher']; ?>
+	<fieldset><legend>Fill out the form to add a publisher:</legend>
+
+	<p><b>Publisher Name:</b> <input type="text" name="publisher_name" size="10" maxlength="20" value="<?php if (isset($_POST['publisher'])) echo $_POST['publisher']; ?>" /></p>
 
 
- <?php header("Location: ../Web_app/admin.html"); ?>
+	</fieldset>
+
+	<div align="center"><input type="submit" name="submit" value="Submit" /></div>
+
+</form>
+
+</body>
+</html> -->
