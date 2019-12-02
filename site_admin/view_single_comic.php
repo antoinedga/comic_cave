@@ -1,9 +1,6 @@
 <?php # displays the details for a particular comic
 $row = FALSE; // Assume nothing!
 
-// Make sure there's a comic ID!
-if (isset($_GET['cid']) && filter_var($_GET['cid'], FILTER_VALIDATE_INT, array('min_range' => 1)) )
-{
 	$cid = $_GET['cid'];
 
 	// Get the comic info:
@@ -21,10 +18,10 @@ if (isset($_GET['cid']) && filter_var($_GET['cid'], FILTER_VALIDATE_INT, array('
 	-- publishers.publisher_id=comics.publisher_id AND
 	comics.comic_id=$cid";
 	$r = mysqli_query ($conn, $q);
-  $row = mysqli_fetch_assoc($r);
+  $row = mysqli_fetch_object($r);
   echo json_encode($r);
   mysqli_close($conn);
-}
+
 
 if (!$row)
 {
