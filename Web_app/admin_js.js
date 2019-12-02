@@ -155,8 +155,7 @@ var opt = document.createElement('option');
  var quantity = row.insertCell(4);
  var button = row.insertCell(5);
  var x = document.createElement("button");
- x.setAttribute("onclick", "view_single_comic(" + comic.comic_id +")");
- x.innerHTML = "<i class=\"fa fa-info-circle\" aria-hidden=\"true\oilo,,"></i>"
+x.setAttribute("onclick",  view_single_comic(comic.comic_id));
  button.appendChild(x);
 
  // Add some text to the new cells:
