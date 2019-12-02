@@ -1,4 +1,9 @@
+// Rachel Reagan for the base of PHP
+// Antoine Gordon for JS to handle PHP and populate admin page
+// COP4331 Process of Object Oriented Software Fall 2019
 
+// select Functionality for the inventory table
+// maybe to add an update feature
 $( function() {
    $( "#selectable_body").selectable(
      {
@@ -6,12 +11,13 @@ $( function() {
      selected: function() {
                   $( ".ui-selected", this ).each(function() {
                   var value = $(this).attr('value');
-                  $("#view").attr("onclick", "view_comic.php?cid=" + value);
                   });
     }
   });
  });
 
+// to view a single comics more detail, does a get request, populate the modal
+// and shows it
 function view_single_comic(id){
     $.ajax({
      type: "GET",
@@ -28,7 +34,6 @@ function view_single_comic(id){
        document.getElementById("wri_holder").innerHTML = data.writer;
        document.getElementById("description").innerHTML = data.description;
         $('#view_comic').modal('show');
-
     },
      error: function(err){
        alert("Error getting fields for comics");
@@ -37,36 +42,37 @@ function view_single_comic(id){
    });
  }
 
+// drop down for publisher in the add comic modal
 function drop_down_publisher(order, index){
 
     // Find a <table> element with id="myTable":
 var table = document.getElementById("publisher_selecter");
 var opt = document.createElement('option');
  // Create an empty <tr> element and add it to the 1st position of the table:
- opt.value = order[0];
- opt.innerHTML = order[1];
+ opt.value = order[0]; // id of publisher
+ opt.innerHTML = order[1]; // name of publisher
  table.add(opt);
 }
-
+// drop down for artist for add comic modal
 function drop_down_artist(order, index){
 
     // Find a <table> element with id="myTable":
 var table = document.getElementById("artist_selecter");
 var opt = document.createElement('option');
  // Create an empty <tr> element and add it to the 1st position of the table:
- opt.value = order[0];
- opt.innerHTML = order[1];
+ opt.value = order[0]; // id for artist
+ opt.innerHTML = order[1]; // name of artist
  table.add(opt);
 }
-
+// drop down for writer for add writer modal
 function drop_down_writer(order, index){
 
     // Find a <table> element with id="myTable":
 var table = document.getElementById("writer_selecter");
 var opt = document.createElement('option');
  // Create an empty <tr> element and add it to the 1st position of the table:
- opt.value = order[0];
- opt.innerHTML = order[1];
+ opt.value = order[0]; // id for writer
+ opt.innerHTML = order[1]; // string of writers name
  table.add(opt);
 }
 
@@ -84,6 +90,8 @@ var opt = document.createElement('option');
      cache:false,
      dataType:"json",
      success: function(data){
+       // A 3D ARRAY that holds the 2d arrays for publisher, artist, and writer
+       // which holds a 1d array for each item
        data[0].forEach(drop_down_publisher);
        data[1].forEach(drop_down_artist);
        data[2].forEach(drop_down_writer);
@@ -94,7 +102,7 @@ var opt = document.createElement('option');
      }
    });
  }
-
+// to view orders
  function table_row_order(order, index){
 
     // Find a <table> element with id="myTable":
@@ -117,14 +125,12 @@ var opt = document.createElement('option');
  orderDate.innerHTML = order.quantity;
 }
 
-
-
  $(document).ready(function(){
    get_inventory();
      return false;
    });
 
-
+// to get a list of all the inventory of the shop
  function get_inventory(){
     $.ajax({
      type: "GET",
@@ -140,6 +146,7 @@ var opt = document.createElement('option');
    });
  }
 
+// the forEach method to do each row
  function table_row(comic, index){
 
     // Find a <table> element with id="myTable":
@@ -153,6 +160,7 @@ var opt = document.createElement('option');
  var artist = row.insertCell(2);
  var title = row.insertCell(3);
  var quantity = row.insertCell(4);
+ // creating button to point to modal's get method to show the modal of the details
  var button = row.insertCell(5);
  var x = document.createElement("button");
  x.setAttribute("onclick",  view_single_comic(comic.comic_id));
@@ -173,7 +181,7 @@ var opt = document.createElement('option');
  	});
  });
 
-
+// api call for submit artist
  function submitForm_artist(){
  	 $.ajax({
  		type: "POST",
@@ -191,7 +199,6 @@ var opt = document.createElement('option');
  	});
  }
 
-
   $(document).ready(function(){
   	$("#authorForm").submit(function(event){
   		submitForm_author();
@@ -199,7 +206,7 @@ var opt = document.createElement('option');
   	});
   });
 
-
+// api call for adding author
   function submitForm_author(){
   	 $.ajax({
   		type: "POST",
@@ -225,7 +232,7 @@ var opt = document.createElement('option');
   	});
   });
 
-
+// api call to add publisher
   function submitForm_publisher(){
   	 $.ajax({
   		type: "POST",
@@ -251,7 +258,7 @@ var opt = document.createElement('option');
     	});
     });
 
-
+// api call to add comics
     function submitForm_comic(){
     	 $.ajax({
     		type: "POST",
@@ -265,7 +272,6 @@ var opt = document.createElement('option');
     		},
     		error: function(err){
     			alert(err);
-
     		}
     	});
     }
