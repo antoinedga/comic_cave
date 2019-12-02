@@ -33,7 +33,7 @@ function view_single_comic(id){
        document.getElementById("art_holder").innerHTML = data.artists;
        document.getElementById("pub_holder").innerHTML = data.publisher;
        document.getElementById("price_holder").innerHTML = data.price;
-       document.getElementById("quan_holder").innerHTML = data.quanity;
+       document.getElementById("quan_holder").innerHTML = data.quantity;
        document.getElementById("wri_holder").innerHTML = data.writer;
        document.getElementById("description").innerHTML = data.description;
         $('#view_comic').modal('show');
