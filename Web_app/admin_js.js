@@ -15,7 +15,7 @@ $( function() {
 function view_single_comic(id){
     $.ajax({
      type: "GET",
-     url: "../site_admin/comic_modal.php",
+     url: "../site_admin/view_single_comic.php",
      data: {cid: id},
      cache:false,
      dataType:"json",
