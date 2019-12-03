@@ -4,10 +4,6 @@ var elWidth = $el.outerWidth();
 
 var $wrapper = $("#scaleable-wrapper");
 
-$wrapper.resizable({
-  resize: doResize
-});
-
 function doResize(event, ui) {
   
   var scale, origin;
