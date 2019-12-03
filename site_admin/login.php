@@ -1,6 +1,10 @@
+<style>
+<?php include 'login.css'; ?>
+</style>
 <?php # login script 
 session_start();
 $page_title = 'Login';
+
 $loggedin = false;
 $error = false;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -59,13 +63,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	mysqli_close($conn);
 } // End of SUBMIT conditional.
 ?>
+<!-- 
+<div class="login-page">
+	<div class="form">
+		<form action="login.php" method="post">
+			<fieldset>
+			<p><strong>Email Address:</strong> <input type="email" name="email" size="20" maxlength="60"></p>
+			<p><strong>Password:</strong> <input type="password" name="pass" size="20" maxlength="20"/></p>
+			<div align="center"><input type="submit" name="submit" value="Login"></div>
+			</fieldset>
+		</form>
+	</div>
+</div> -->
 
-<h1>Login</h1>
-<p>Your browser must allow cookies in order to log in.</p>
-<form action="login.php" method="post">
+
+<form action="login.php" method="post" class="login-form">
+<!-- <form class="login-form"> -->
+	<p class="login-text">
+		<span class="fa-stack fa-lg">
+		<!-- <i class="fa fa-circle fa-stack-2x"></i> -->
+		<i class="fa fa-lock fa-stack-1x"></i>
+		</span>
+	</p>
+ 
 	<fieldset>
-	<p><strong>Email Address:</strong> <input type="email" name="email" size="20" maxlength="60"></p>
-	<p><strong>Password:</strong> <input type="password" name="pass" size="20" maxlength="20"/></p>
-	<div align="center"><input type="submit" name="submit" value="Login"></div>
+		<input type="email" class="login-username" autofocus="true" required="true" placeholder="Email" name="email" />
+		<input type="password" class="login-password" required="true" placeholder="Password" name="pass"/>
+		<input type="submit" name="Login" value="Login" class="login-submit" />
 	</fieldset>
 </form>
+<div class="underlay-photo"></div>
+<div class="underlay-black"></div> 
