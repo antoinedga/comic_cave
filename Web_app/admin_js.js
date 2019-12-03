@@ -264,13 +264,18 @@ var opt = document.createElement('option');
 
 // api call to add comics
     function submitForm_comic(){
+      var img = $('input[name="image"]').get(0).files[0];
+      var form = document.getElementById('comicForm');
+      var formData = new FormData(form);
+      formData.append('image', img);
+
     	 $.ajax({
     		type: "POST",
     		url: "../site_admin/add_comic.php",
     		cache:false,
         contentType: "application/json",
-        processData: false,
-    		data: $('form#comicForm').serialize(),
+        processData: true,
+    		data: formData,
     		success: function(response){
     			//$("#artist").html(response)
     		$("#add_comic").modal('hide');
