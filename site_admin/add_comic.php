@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	}
 	else  // No uploaded file.
 	{
-		$errors[] = 'No file was uploaded.';
+		$i = "unavailable.jpg";
 		$temp = NULL;
 	}
 
@@ -122,8 +122,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 			// Print a message:
 
 			// Rename the image:
-			$id = mysqli_stmt_insert_id($stmt); // Get the comic ID.
-			rename ($temp, "../uploads/$id");
+			// $id = mysqli_stmt_insert_id($stmt); // Get the comic ID.
+			// rename ($temp, "../uploads/$id");
 
 			// Clear $_POST:
 			$_POST = array();
