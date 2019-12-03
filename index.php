@@ -26,10 +26,8 @@ body {font-family: "Lato", sans-serif}
     <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <a href="#up" class="w3-bar-item w3-button w3-padding-large w3-hide-small">UPCOMING RELEASES</a>
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-
-    </div>
-    <a href="./site_admin/login.php" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa-sign-in"></i></a>
   </div>
+  <a href="./site_admin/login.php" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa-sign-in"></i></a>
 </div>
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
@@ -48,81 +46,68 @@ body {font-family: "Lato", sans-serif}
     <p class="w3-opacity"><i>Download our app to browse our inventory</i></p>
     <p class="w3-center">We carry comics from multiple publishers. <br/>If we don't have what you're looking for, fill out the contact form with your request and we will order it for you!</p>
     <div class="w3-row w3-padding-32">
-	 <div class="w3-col" style="width:20%">
-        <img src="./pub_img/dc.png" class="w3-round w3-margin-bottom" alt="DC" style="width:60%">
-      </div>
 		<div class="w3-col" style="width:20%">
-        <img src="./pub_img/dh.png" class="w3-round w3-margin-bottom" alt="Dark Horse" style="width:60%">
-      </div>
+        	<img src="./pub_img/dc.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+		</div>
+      	<div class="w3-col" style="width:20%">
+        	<img src="./pub_img/dh.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+      	</div>
 		<div class="w3-col" style="width:20%">
-        <img src="./pub_img/marvel.png" class="w3-round" alt="Marvel" style="width:60%">
+        	<img src="./pub_img/marvel.png" class="w3-round" alt="Random Name" style="width:60%">
 		</div>
 		<div class="w3-col" style="width:20%">
-        <img src="./pub_img/idw.png" class="w3-round" alt="IDW" style="width:60%">
+        	<img src="./pub_img/idw.png" class="w3-round" alt="Random Name" style="width:60%">
 		</div>
 		<div class="w3-col" style="width:20%">
-        <img src="./pub_img/viz.jpg" class="w3-round" alt="Viz" style="width:60%">
-      </div> 
+        	<img src="./pub_img/viz.jpg" class="w3-round" alt="Random Name" style="width:60%">
+      	</div> 
     </div>
   </div>
-
+  
   <!-- The Upcoming Section -->
-  <div class="w3-black" id="up">
-    <div class="w3-container w3-content w3-padding-64" style="max-width:800px">
-      <h2 class="w3-wide w3-center">UPCOMING RELEASES</h2>
-      <p class="w3-opacity w3-center"><i>Remember to check in on Wednesdays!</i></p><br>
-
-<<<<<<< HEAD
-        <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-          <p> put upcoming comics here</p>
-        </div>
-=======
-      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
-		<div class= "tablecontent">	
-			<table class="a">
-				<tbody id='table_content1'>
-					<tr>
-						<th>Publisher</th>
-						<th>Title</th>
-						<th>Date</th>
-					</tr>
-				</tbody>
-			</table>
-		</div>
-      </div>
->>>>>>> ef3e34c78fea90b76cdf430a1b67e249e5a5fd2a
-    </div>
-  </div>
-    <!-- </div> -->
-  <!-- </div> -->
-
+	<div class="w3-black" id="up">
+    	<div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+      		<h2 class="w3-wide w3-center">UPCOMING RELEASES</h2>
+      		<p class="w3-opacity w3-center"><i>Remember to check in on Wednesdays!</i></p><br>
+      			<div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+					<div class= "tablecontent">	
+						<table class="a">
+							<tbody id='table_content1'>
+								<tr>
+                              	<th>Publisher</th>
+                             	<th>Title</th>
+                             	<th>Date</th>
+                          		</tr>
+							</tbody>
+						</table>
+					</div>
+      			</div>
+      	</div>
+  	</div>
  
-
   <!-- The Contact Section -->
 	<div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
 		<h2 class="w3-wide w3-center">CONTACT</h2>
 		<p class="w3-opacity w3-center"><i>Get in touch!</i></p>
 		<div class="w3-row w3-padding-32">
 			<div class="w3-col m6 w3-large w3-margin-bottom">
-			<i class="fa fa-map-marker" style="width:30px"></i> Orlando, US<br>
-			<i class="fa fa-phone" style="width:30px"></i> Phone: (407) 930-2237<br>
-			<i class="fa fa-envelope" style="width:30px"> </i> Email: comic_cave@mail.com<br>
-    	</div>
-      <div class="w3-col m6">
-        <div class="w3-half">
-        <img src="./pub_img/play.png" class="w3-round w3-margin-bottom" alt="google play" style="width:60%">
-        </div>
-        <div class="w3-half">
-        <img src="./pub_img/apple.jpg" class="w3-round w3-margin-bottom" alt="apple" style="width:60%">
-        </div>
+              <i class="fa fa-map-marker" style="width:30px"></i> Orlando, US<br>
+              <i class="fa fa-phone" style="width:30px"></i> Phone: (407) 930-2237<br>
+              <i class="fa fa-envelope" style="width:30px"> </i> Email: comic_cave@mail.com<br>
+			</div>
+			<div class="w3-col m6">
+      		  <div class="w3-half">
+        		<img src="./pub_img/play.png" class="w3-round w3-margin-bottom" alt="google play" style="width:60%">
+        		</div>
+              <div class="w3-half">
+        		<img src="./pub_img/apple.jpg" class="w3-round w3-margin-bottom" alt="apple" style="width:60%">
+        	  </div>
+      		</div>
       </div>
-    </div>
-	</div>
+  </div>
   
 <!-- End Page Content -->
-
 <script src="index.js"></script>
-
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button
 function myFunction() {
@@ -134,6 +119,5 @@ function myFunction() {
   }
 }
 </script>
-
 </body>
 </html>
