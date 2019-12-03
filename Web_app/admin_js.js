@@ -266,6 +266,7 @@ var opt = document.createElement('option');
     function submitForm_comic(){
       var img = $('input[name="image"]').get(0).files[0];
       var form = document.getElementById('comicForm');
+      form.elements["price"].value = Number(form.elements["price"].value.replace(/[^0-9.-]+/g,""));
       console.log(form);
       var formData = new FormData(form);
       formData.append('image', img);
