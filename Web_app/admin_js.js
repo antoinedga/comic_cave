@@ -30,14 +30,14 @@ function view_single_comic(id){
      dataType:"json",
      success: function(data){
        console.log(data);
-       // document.getElementById("comic_holder").innerHTML = data.comic_name;
-       // document.getElementById("art_holder").innerHTML = data.artists;
-       // document.getElementById("pub_holder").innerHTML = data.publisher;
-       // document.getElementById("price_holder").innerHTML = data.price;
-       // document.getElementById("quan_holder").innerHTML = data.quantity;
-       // document.getElementById("wri_holder").innerHTML = data.writer;
-       // document.getElementById("description").innerHTML = data.description;
-       //  $('#view_comic').modal('show');
+       document.getElementById("comic_holder").innerHTML = data.comic_name;
+       document.getElementById("art_holder").innerHTML = data.artists;
+       document.getElementById("pub_holder").innerHTML = data.publisher;
+       document.getElementById("price_holder").innerHTML = data.price;
+       document.getElementById("quan_holder").innerHTML = data.quantity;
+       document.getElementById("wri_holder").innerHTML = data.writer;
+       document.getElementById("description").innerHTML = data.description;
+        $('#view_comic').modal('show');
     },
      error: function(err){
        alert("Error getting fields for comics modal view");
