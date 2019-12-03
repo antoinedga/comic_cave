@@ -27,7 +27,6 @@ async function get(url, tableID)
   }
 }
 get('https://api.shortboxed.com/comics/v1/new', "table_content1");
-get('https://api.shortboxed.com/comics/v1/future', "table_content1");
 get('https://api.shortboxed.com/comics/v1/previous', "table_content2");
 
 function insert_table(item, tableID)
