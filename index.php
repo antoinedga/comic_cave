@@ -23,7 +23,7 @@ body {font-family: "Lato", sans-serif}
     </div>
     <a href="./site_admin/login.php" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa-sign-in"></i></a>
   </div>
-<!-- </div> -->
+</div>
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
@@ -76,31 +76,31 @@ body {font-family: "Lato", sans-serif}
  
 
   <!-- The Contact Section -->
-  <div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
-    <h2 class="w3-wide w3-center">CONTACT</h2>
-    <p class="w3-opacity w3-center"><i>Get in touch!</i></p>
-    <div class="w3-row w3-padding-32">
-      <div class="w3-col m6 w3-large w3-margin-bottom">
-        <i class="fa fa-map-marker" style="width:30px"></i> Orlando, US<br>
-        <i class="fa fa-phone" style="width:30px"></i> Phone: (407) 930-2237<br>
-        <i class="fa fa-envelope" style="width:30px"> </i> Email: comic_cave@mail.com<br>
-      </div>
-      <div class="w3-col m6">
-        <form action="/action_page.php" target="_blank">
-          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
-            <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
-            </div>
-            <div class="w3-half">
-              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
-            </div>
-          </div>
-          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-          <button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
-        </form>
-      </div>
-    </div>
-  </div>
+	<div class="w3-container w3-content w3-padding-64" style="max-width:800px" id="contact">
+		<h2 class="w3-wide w3-center">CONTACT</h2>
+		<p class="w3-opacity w3-center"><i>Get in touch!</i></p>
+		<div class="w3-row w3-padding-32">
+			<div class="w3-col m6 w3-large w3-margin-bottom">
+			<i class="fa fa-map-marker" style="width:30px"></i> Orlando, US<br>
+			<i class="fa fa-phone" style="width:30px"></i> Phone: (407) 930-2237<br>
+			<i class="fa fa-envelope" style="width:30px"> </i> Email: comic_cave@mail.com<br>
+		</div>
+		<div class="w3-col m6">
+			<form action="/action_page.php" target="_blank">
+				<div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+				<div class="w3-half">
+					<input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+				</div>
+				<div class="w3-half">
+					<input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+				</div>
+				</div>
+				<input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+				<button class="w3-button w3-black w3-section w3-right" type="submit">SEND</button>
+			</form>
+		</div>
+		</div>
+	</div>
   
 <!-- End Page Content -->
 </div>
