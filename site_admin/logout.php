@@ -11,13 +11,13 @@ if (!isset($_SESSION['first_name'])) {
 	exit(); 
 	
 } else { // Log out the user.
-
+	$url = '../index.php'; 
 	$_SESSION = array(); // Destroy the variables.
 	session_destroy(); // Destroy the session itself.
 	setcookie (session_name(), '', time()-3600); // Destroy the cookie.
-
+	header("Location: $url");
+	exit(); 
 }
 
 // Print a customized message:
-echo '<h3>You are now logged out.</h3>';
 ?>
