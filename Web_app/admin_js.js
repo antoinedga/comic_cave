@@ -268,7 +268,7 @@ var opt = document.createElement('option');
       var price = document.getElementById('currency');
 
       var form = document.getElementById('comicForm');
-      form.elements["price"].value = Number(form.elements["price"].value.replace(/[^0-9.-]+/g,""));
+      form.elements["price"].value =  Number(form.elements["price"].value.replace(/[^0-9\.-]+/g,""));
       console.log(form);
       var formData = new FormData(form);
       //formData.append('image', img);
