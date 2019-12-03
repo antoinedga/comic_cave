@@ -267,11 +267,14 @@ var opt = document.createElement('option');
       var img = $('input[name="image"]').get(0).files[0];
       var formData = new FormData($('#comicForm')[0]);
       formData.append('image', img);
+      console.log(img);
+      console.log(formData);
 
     	 $.ajax({
     		type: "POST",
     		url: "../site_admin/add_comic.php",
     		cache:false,
+        contentType: 'multipart/form-data'
     		data: formData,
     		success: function(response){
     			//$("#artist").html(response)
