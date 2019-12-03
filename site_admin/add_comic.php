@@ -2,9 +2,6 @@
 <?php # allows the administrator to add a comic (product).
 require ('../mysqli_connect.php');
 $conn = OpenCon();
-$allowedExts = array("jpeg","jpg", "png");
-$temp_ext = explode(".", $_FILES['image']['name'])
-$extension = end($temp_ext);
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 { // Handle the form.
@@ -25,10 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	if (is_uploaded_file ($_FILES['image']['tmp_name']))
 	{
 		// Create a temporary file name:
-		$temp = $_SERVER['DOCUMENT_ROOT']."/uploads/";
+		$temp = $temp = $_SERVER['DOCUMENT_ROOT']."/uploads/";
 
 		// Move the file over:
-		if (move_uploaded_file($_FILES['image']['tmp_name'], $temp . $_FILES['image']['name']))
+		if (move_uploaded_file($_FILES['image']['tmp_name'], $temp . $_FILES['image']['tmp_name']))
 		{
 			// FIXME: need to store as image name
 			// Set the $i variable to the image's name:
