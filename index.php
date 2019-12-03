@@ -1,11 +1,18 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <title>Comic Cave</title>
 <meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="home.css">
 <style>
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
@@ -65,9 +72,25 @@ body {font-family: "Lato", sans-serif}
       <h2 class="w3-wide w3-center">UPCOMING RELEASES</h2>
       <p class="w3-opacity w3-center"><i>Remember to check in on Wednesdays!</i></p><br>
 
+<<<<<<< HEAD
         <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
           <p> put upcoming comics here</p>
         </div>
+=======
+      <div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+		<div class= "tablecontent">	
+			<table class="a">
+				<tbody id='table_content1'>
+					<tr>
+						<th>Publisher</th>
+						<th>Title</th>
+						<th>Date</th>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+      </div>
+>>>>>>> ef3e34c78fea90b76cdf430a1b67e249e5a5fd2a
     </div>
   </div>
     <!-- </div> -->
@@ -97,8 +120,8 @@ body {font-family: "Lato", sans-serif}
 	</div>
   
 <!-- End Page Content -->
-</div>
 
+<script src="index.js"></script>
 
 <script>
 // Used to toggle the menu on small screens when clicking on the menu button
