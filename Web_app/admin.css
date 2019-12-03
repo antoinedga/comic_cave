@@ -24,7 +24,7 @@ tr{
   display: table-row;
 }
 
-td{
+td, th{
   display: table-cell;
   width: 16vh;
 }
