@@ -167,8 +167,7 @@ var opt = document.createElement('option');
  // creating button to point to modal's get method to show the modal of the details
  var button = row.insertCell(5);
  var x = document.createElement("button");
- x.innnerHTML = "<i class=\"fas fa-info mx-1\" data-toggle=\"tooltip\" data-placement=\"top\"
-              title=\"Tooltip on top\"></i>"
+ x.innnerHTML = "<i class=\"fas fa-info mx-1\" data-toggle=\"tooltip\" data-placement=\"top\"title=\"Tooltip on top\"></i>";
  x.setAttribute("onclick",  "view_single_comic(" + comic.comic_id + ")");
  button.appendChild(x);
 
