@@ -268,8 +268,7 @@ var opt = document.createElement('option');
       var form = document.getElementById('comicForm');
       var formData = new FormData(form);
       formData.append('image', img);
-      console.log(form.elements
-        form.element.forEach(element => {
+      form.element.forEach(element => {
           console.log(element.value + "\n");
         });
       console.log(img);
