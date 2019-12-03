@@ -19,6 +19,9 @@ body {
    overflow-y: hidden;
    overflow-x: hidden; /* hides the horizontal scroll bar */
 }
+tr{
+  align-content: center;
+}
 
 .dropdown-menu {
     text-align: center;
