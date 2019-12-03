@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 				$loggedin=true;
 				mysqli_close($conn);
 				// Redirect the user:
-				$url = 'dashboard.php'; // Define the URL.
+				$url = '../Web_app/admin.php'; // Define the URL.
 				ob_end_clean(); // Delete the buffer.
 				header("Location: $url");
 				exit(); // Quit the script.
