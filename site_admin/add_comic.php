@@ -21,13 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 		$errors[] = 'Please enter the comics\'s name!';
 	}
 
-
-
-	if (($_FILES["file"]["type"] == "image/jpeg") || ($_FILES["file"]["type"] == "image/jpg") || ($_FILES["file"]["type"] == "image/pjpeg"))
-	{
-		$errors[] = 'wrong fileType!\n';
-	}
-
 	// Check for an image:
 	if (is_uploaded_file ($_FILES['image']['tmp_name']))
 	{
