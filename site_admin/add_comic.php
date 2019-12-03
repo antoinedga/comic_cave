@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	if (is_uploaded_file ($_FILES['image']['tmp_name']))
 	{
 		// Create a temporary file name:
-		$temp = '../uploads/' . md5($_FILES['image']['name']);
+		$temp = $_SERVER['DOCUMENT_ROOT']."/uploads/";
 
 		// Move the file over:
 		if (move_uploaded_file($_FILES['image']['tmp_name'], $temp))
