@@ -265,12 +265,9 @@ var opt = document.createElement('option');
 // api call to add comics
     function submitForm_comic(){
       var img = $('input[name="image"]').get(0).files[0];
-      var form = document.getElementById('comicForm');
+      var form = $('form#authorForm');
       var formData = new FormData(form);
       formData.append('image', img);
-      form.elements.forEach(function(element){
-          console.log(element.value + "\n");
-        });
       console.log(img);
       console.log(formData);
 
