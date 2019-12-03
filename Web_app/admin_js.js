@@ -264,9 +264,7 @@ var opt = document.createElement('option');
 
 // api call to add comics
     function submitForm_comic(){
-      //var img = $('input[name="image"]').get(0).files[0];
-      var price = document.getElementById('currency');
-      var form = document.getElementById('comicForm');
+      var img = $('input[name="image"]').get(0).files[0];
       console.log(form);
       var formData = new FormData(form);
       //formData.append('image', img);
