@@ -25,21 +25,22 @@ function view_single_comic(id){
     $.ajax({
      type: "GET",
      url: "../site_admin/view_single_comic.php",
-     data: {cid: id},
+     data: {comic_id: id},
      cache:false,
      dataType:"json",
      success: function(data){
+       console.log(data);
        document.getElementById("comic_holder").innerHTML = data.comic_name;
-       document.getElementById("art_holder").innerHTML = data.artists;
+       document.getElementById("art_holder").innerHTML = data.artist;
        document.getElementById("pub_holder").innerHTML = data.publisher;
        document.getElementById("price_holder").innerHTML = data.price;
-       document.getElementById("quan_holder").innerHTML = data.quanity;
+       document.getElementById("quan_holder").innerHTML = data.quantity;
        document.getElementById("wri_holder").innerHTML = data.writer;
        document.getElementById("description").innerHTML = data.description;
         $('#view_comic').modal('show');
     },
      error: function(err){
-       alert("Error getting fields for comics");
+       alert("Error getting fields for comics modal view");
        console.log(err);
      }
    });
@@ -166,7 +167,7 @@ var opt = document.createElement('option');
  // creating button to point to modal's get method to show the modal of the details
  var button = row.insertCell(5);
  var x = document.createElement("button");
- x.setAttribute("onclick",  view_single_comic(comic.comic_id));
+ x.setAttribute("onclick",  "view_single_comic(" + comic.comic_id + ")");
  button.appendChild(x);
 
  // Add some text to the new cells:

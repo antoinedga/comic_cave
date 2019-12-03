@@ -19,7 +19,15 @@ body {
    overflow-y: hidden;
    overflow-x: hidden; /* hides the horizontal scroll bar */
 }
+tr{
+  align-content: center;
+  display: table-row;
+}
 
+td, th{
+  display: table-cell;
+  width: 16vh;
+}
 .dropdown-menu {
     text-align: center;
 }
