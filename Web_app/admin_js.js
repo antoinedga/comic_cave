@@ -274,7 +274,7 @@ var opt = document.createElement('option');
     		type: "POST",
     		url: "../site_admin/add_comic.php",
     		cache:false,
-        contentType: 'multipart/form-data'
+        contentType: 'multipart/form-data',
     		data: formData,
     		success: function(response){
     			//$("#artist").html(response)
