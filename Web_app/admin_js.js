@@ -278,6 +278,8 @@ var opt = document.createElement('option');
     		cache:false,
         contentType: 'multipart/form-data',
     		data: formData,
+        processData: false,
+        contentType: false,
     		success: function(response){
     			//$("#artist").html(response)
     		$("#add_comic").modal('hide');
