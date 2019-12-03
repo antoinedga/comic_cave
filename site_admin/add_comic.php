@@ -22,10 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 	if (is_uploaded_file ($_FILES['image']['tmp_name']))
 	{
 		// Create a temporary file name:
-		$temp = $_SERVER['DOCUMENT_ROOT']."/uploads/";
+		$temp = $temp = $_SERVER['DOCUMENT_ROOT']."/uploads/";
 
 		// Move the file over:
-		if (move_uploaded_file($_FILES['image']['tmp_name'], $temp))
+		if (move_uploaded_file($_FILES['image']['tmp_name'], $temp . $_FILES['image']['tmp_name']))
 		{
 			// FIXME: need to store as image name
 			// Set the $i variable to the image's name:
