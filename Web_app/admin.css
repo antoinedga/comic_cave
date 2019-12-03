@@ -21,8 +21,13 @@ body {
 }
 tr{
   align-content: center;
+  display: table-row;
 }
 
+td{
+  display: table-cell;
+  width: 25vh;
+}
 .dropdown-menu {
     text-align: center;
 }
