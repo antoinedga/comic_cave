@@ -268,7 +268,7 @@ var opt = document.createElement('option');
     		type: "POST",
     		url: "../site_admin/add_comic.php",
     		cache:false,
-        contentType: false,
+        contentType: "application/json",
         processData: false,
     		data: $('form#comicForm').serialize(),
     		success: function(response){
