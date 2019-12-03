@@ -272,7 +272,7 @@ var opt = document.createElement('option');
       console.log(form);
       var formData = new FormData(form);
       //formData.append('image', img);
-      console.log(img);
+    //  console.log(img);
       console.log(formData);
 
     	 $.ajax({
