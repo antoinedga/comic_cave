@@ -116,10 +116,10 @@ var opt = document.createElement('option');
      type: "GET",
      url: "../site_admin/view_order.php",
      cache:false,
-     dataType:"json",
      success: function(data){
        console.log(data);
-       //data.items = $.parseJSON(data.items);
+       data = $.parseJSON(data);
+       console.log(data);
        //data.forEach(table_row_order);
     },
      error: function(err){
@@ -311,7 +311,7 @@ var opt = document.createElement('option');
       var img = $('input[name="image"]').get(0).files[0];
       var formData = new FormData(document.getElementById("comicForm"));
       formData.append('image', img);
-      
+
     	 $.ajax({
     		type: "POST",
     		url: "../site_admin/add_comic.php",
