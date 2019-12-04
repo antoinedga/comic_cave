@@ -15,7 +15,7 @@ if (mysqli_num_rows($r) <= 0)
 {
 	printf("no rows??\n");
 }
-
+echo $json;
 $json = mysqli_fetch_all ($r, MYSQLI_ASSOC);
 echo json_encode($json);
 // order in array
