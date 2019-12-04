@@ -120,8 +120,9 @@ var opt = document.createElement('option');
        console.log("before json " +  data);
        var tem1 = JSON.parse(data);
        console.log(tem1);
-       data.forEach(parse);
-       data.forEach(table_row_order);
+       tem1.forEach(parse);
+       console.log("work please\n" + tem1);
+       //data.forEach(table_row_order);
     },
      error: function(err){
        alert("Error getting order list!");
