@@ -14,7 +14,13 @@ AND comics.comic_id=order_info.comic_id";
 // Function to change the row 'items' to a php array
 function rowChange($value, $key)
 {
-	$value = json_decode($value);
+	if ($key == 'items')
+	{
+		$temp = clone $value;
+		$value = null;
+		settype($value, "array");
+		$value = json_decode($temp);
+	}
 }
 
 // Display all the prints, linked to URLs:
@@ -24,7 +30,7 @@ if (mysqli_num_rows($r) <= 0)
     printf("no rows??\n");
 }
 $json = mysqli_fetch_all ($r, MYSQLI_ASSOC);
-array_walk($json, 'rowChange');
+array_walk_recursive($json, 'rowChange');
 echo json_encode($json);
 // order in array
 mysqli_close($conn);
