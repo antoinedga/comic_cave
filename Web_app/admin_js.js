@@ -134,22 +134,26 @@ var opt = document.createElement('option');
     // Find a <table> element with id="myTable":
  var table = document.getElementById("order_list");
  // Create an empty <tr> element and add it to the 1st position of the table:
- var row = table.insertRow(index);
+  var tbl = document.createElement("table");
+  var tblHead = document.createElement("tr");
+  tblHead.innerHTML = "<tr><th>Order Date</th><th>Email</th><th>Total</th></tr>" +
+  "<tr><td>" + order.order_date + "</td>"
+   + "<td>" + order.customer_email + "</td>"
+   + "<td>" + order.total + "</td>";
+  var tblBody = document.createElement("tbody");
+  table.innerHTML = tblHead + tblBody;
 
- // Insert new cells (<td> elements) at the 1st and 2nd position of the "new" <tr> element:
- var comicName = row.insertCell(0);
- var quantity = row.insertCell(1);
- var email = row.insertCell(2);
- var total = row.insertCell(3);
- var orderDate = row.insertCell(4);
+  for(i = 0 i < order.items.length; i++)
+  {
+    var row = tblbody.insertRow();
+    var name = row.insertCell(0);
+    var num = row.insertCell(1);
+    name.innerHTML =order.items[i].comic;
+    num.innerHTML = order.items[i].quantity;
+  }
 
- // Add some text to the new cells:
- comicName.innerHTML = order.comic_name;
- quantity.innerHTML = order.quantity;
- email.innerHTML = order.customer_email;
- total.innerHTML = order.total;
- orderDate.innerHTML = order.order_date;
 }
+
 
  $(document).ready(function(){
    get_inventory();
