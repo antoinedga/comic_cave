@@ -117,7 +117,7 @@ var opt = document.createElement('option');
      url: "../site_admin/view_order.php",
      cache:false,
      success: function(data){
-       console.log("before json " data);
+       console.log("before json " +  data);
        data = $.parseJSON(data);
        data.items = $.parseJSON(data.items);
        console.log(data.items);
