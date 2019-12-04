@@ -121,7 +121,6 @@ var opt = document.createElement('option');
        var tem1 = JSON.parse(data);
        console.log(tem1);
        tem1.forEach(parse);
-       console.log("work please\n" + tem1);
        //data.forEach(table_row_order);
     },
      error: function(err){
