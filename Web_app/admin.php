@@ -20,6 +20,26 @@ if (!isset($_SESSION['first_name'])) {
     <style>
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #FFF; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000; 
+}
 </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -79,9 +99,9 @@ body {font-family: "Lato", sans-serif}
               </button>
               <div class="collapse" id="list_of_order">
                 <table class="table">
-                  <thead>
+                  <thead class="text-white">
                     <tr>
-                      <th>Order Histories</th>
+                      <th><h3>Incoming Orders</h3></th>
                     </tr>
                   </thead>
                   <tbody class="text-white"id="order_list">
