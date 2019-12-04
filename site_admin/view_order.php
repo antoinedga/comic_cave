@@ -18,7 +18,7 @@ if (mysqli_num_rows($r) <= 0)
     printf("no rows??\n");
 }
 $json = mysqli_fetch_all ($r, MYSQLI_ASSOC);
-$temp = json_decode($json['items'], true, 4);
+$temp = json_decode($json[0]['items'], true, 4);
 
 //$temp = json_decode(json_encode($json), true, 4);
 
