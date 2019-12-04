@@ -118,7 +118,7 @@ var opt = document.createElement('option');
      cache:false,
      success: function(data){
        console.log(data);
-       //data.items = $.parseJSON(data.items);
+       data = $.parseJSON(data);
        //data.forEach(table_row_order);
     },
      error: function(err){
