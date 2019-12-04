@@ -25,7 +25,7 @@ if (mysqli_num_rows($r) <= 0)
 while ($row = mysql_fetch_array($result))
 {
 	$order = array("comic_name" => $row['comic'], "quantity" => $row['quantity']);
-	echo $order;
+	echo json_encode($order);
 }
 
 $json = mysqli_fetch_all($r, MYSQLI_ASSOC);
