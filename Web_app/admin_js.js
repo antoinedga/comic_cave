@@ -118,7 +118,8 @@ var opt = document.createElement('option');
      cache:false,
      success: function(data){
        console.log("before json " +  data);
-       data.forEach(table_row_order);
+       console.log(data);
+       //data.forEach(table_row_order);
     },
      error: function(err){
        alert("Error getting order list!");
