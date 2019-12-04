@@ -1,4 +1,4 @@
-/*
+
 <?php # dashboard for admins
 /*
 session_start();
