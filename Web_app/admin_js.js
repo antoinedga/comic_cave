@@ -144,11 +144,11 @@ var opt = document.createElement('option');
  var orderDate = row.insertCell(4);
 
  // Add some text to the new cells:
- comicName.innerHTML = order.publisher;
- quantity.innerHTML = order.writer;
- email.innerHTML = order.artist;
- total.innerHTML = order.comic_name;
- orderDate.innerHTML = order.quantity;
+ comicName.innerHTML = order.comic_name;
+ quantity.innerHTML = order.quanity;
+ email.innerHTML = order.customer_email;
+ total.innerHTML = order.total;
+ orderDate.innerHTML = order.order_date;
 }
 
  $(document).ready(function(){
