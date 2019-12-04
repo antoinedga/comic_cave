@@ -68,7 +68,7 @@ if (!isset($_SESSION['first_name'])) {
                    List Of Orders
               </button>
               <div class="collapse" id="list_of_order">
-                <table class="u-full-width table">
+                <table class="table">
                   <thead>
                     <tr>
                       <th>Order Histories</th>
@@ -239,11 +239,11 @@ if (!isset($_SESSION['first_name'])) {
           </div>
           <div class="form-group">
             <label for="Price">Price</label>
-            <input type="number" class="form-control text-left" name="price">
+            <input type="number" min='0' step='any' class="form-control text-left" name="price">
           </div>
           <div class="form-group">
             <label for="quanity">Quantity</label>
-            <input class="form-control" type="number" min="0" name="quan" placeholder="0" value="">
+            <input class="form-control" type="number" min="0" step='1' name="quan" placeholder="0" value="">
           </div>
           <div class="form-group">
             <label for="desription">Description</label>
