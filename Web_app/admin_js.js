@@ -145,7 +145,7 @@ var opt = document.createElement('option');
 
   for(var i = 0 ;i < order.items.length; i++)
   {
-    var row = tblbody.insertRow();
+    var row = tblBody.insertRow();
     var name = row.insertCell(0);
     var num = row.insertCell(1);
     name.innerHTML =order.items[i].comic;
