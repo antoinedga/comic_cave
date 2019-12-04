@@ -120,7 +120,7 @@ var opt = document.createElement('option');
      dataType:"json",
      success: function(data){
        console.log(data);
-       data.items = JSON.parse(data.items);
+       data.items = $.parseJSON(data.items);
        data.forEach(table_row_order);
     },
      error: function(err){
