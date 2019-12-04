@@ -43,6 +43,9 @@ body {font-family: "Lato", sans-serif}
     <title>Admin page</title>
   </head>
   <body>
+  <div class="w3-top">
+  <a href="./site_admin/logout.php" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa-sign-out"></i></a>
+</div>
 <div id="body" class="container-fluid row">
       <div id="left" class="w3-black col-3 align-items-center border border-left-0 padding" style="height:100vh">
         <div class="top-left mb-3">
