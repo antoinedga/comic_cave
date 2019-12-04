@@ -106,6 +106,28 @@ var opt = document.createElement('option');
      }
    });
  }
+
+ $(document).ready(function(){
+   table_for_order();
+     return false;
+   });
+
+ function table_for_order(){
+    $.ajax({
+     type: "GET",
+     url: "../site_admin/view_order.php",
+     cache:false,
+     dataType:"json",
+     success: function(data){
+       console.log(data);
+       data.forEach(table_row_order);
+    },
+     error: function(err){
+       alert("Error getting order list!");
+       console.log(err);
+     }
+   });
+ }
 // to view orders
  function table_row_order(order, index){
 
