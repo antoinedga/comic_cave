@@ -1,5 +1,4 @@
 <?php # dashboard for admins
-/*
 session_start();
 $page_title = 'Welcome!';
 if (!isset($_SESSION['first_name'])) {
@@ -7,13 +6,22 @@ if (!isset($_SESSION['first_name'])) {
 	ob_end_clean();
 	header("Location: $url");
 	exit();
-} */
+} 
 ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -32,8 +40,12 @@ if (!isset($_SESSION['first_name'])) {
     <title>Admin page</title>
   </head>
   <body>
+  <div class="w3-top">
+  <a href="../site_admin/logout.php" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa-sign-out"></i></a>
+</div>
+
 <div id="body" class="container-fluid row">
-      <div id="left" class="col-3 align-items-center border border-left-0 padding ">
+  <div id="left" class="w3-black col-3 align-items-center border border-left-0 padding" style="height:100vh">
         <div class="top-left mb-3">
           <h2>Functionality</h2>
         </div>
