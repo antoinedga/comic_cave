@@ -118,8 +118,7 @@ function table_row_order_add(order){
     var table = document.getElementById("order_list");
     // Create an empty <tr> element and add it to the 1st position of the table:
 
-     var tblHead = table.createTHead();
-     var thRow = tblHead.insertRow();
+     var thRow = table.insertRow();
      var cell1 = thRow.insertCell(0);
      var cell2 = thRow.insertCell(1);
      var cell3 = thRow.insertCell(2);
