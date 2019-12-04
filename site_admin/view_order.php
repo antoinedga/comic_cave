@@ -22,7 +22,7 @@ $json['items'] = json_decode($json['items'], true, 4);
 
 //$temp = json_decode(json_encode($json), true, 4);
 
-echo json_encode($temp);
+echo json_encode($json);
 // order in array
 mysqli_close($conn);
 ?>
