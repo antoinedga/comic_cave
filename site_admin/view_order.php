@@ -17,7 +17,7 @@ function rowChange($value, $key)
 	if ($key == 'items')
 	{
 		$temp = clone $value;
-		$value = null;
+		$value = json_encode((object) null);
 		settype($value, "array");
 		$value = json_decode($temp);
 	}
