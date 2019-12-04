@@ -143,7 +143,7 @@ var opt = document.createElement('option');
   var tblBody = document.createElement("tbody");
   table.innerHTML = tblHead + tblBody;
 
-  for(i = 0 i < order.items.length; i++)
+  for(var i = 0 ;i < order.items.length; i++)
   {
     var row = tblbody.insertRow();
     var name = row.insertCell(0);
