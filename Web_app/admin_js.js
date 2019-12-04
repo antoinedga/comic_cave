@@ -151,7 +151,7 @@ var opt = document.createElement('option');
     name.innerHTML =order.items[i].comic;
     num.innerHTML = order.items[i].quantity;
   }
-  $(tbl).appendTo('$(#order_list');
+  $(tbl).appendTo($('#order_list'));
 
 }
 
