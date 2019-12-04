@@ -119,9 +119,9 @@ var opt = document.createElement('option');
      success: function(data){
        console.log("before json " +  data);
        var tem1 = JSON.parse(data);
-       console.log(tem1);
        tem1.forEach(parse);
-       tem1.forEach(table_for_order);
+       console.log(tem1);
+       //tem1.forEach(table_for_order);
     },
      error: function(err){
        alert("Error getting order list!");
@@ -131,7 +131,6 @@ var opt = document.createElement('option');
  }
  function parse(data) {
    data.items = JSON.parse(data.items);
-
  }
 // to view orders
  function table_row_order(order, index){
