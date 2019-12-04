@@ -6,7 +6,7 @@ if (!isset($_SESSION['first_name'])) {
 	ob_end_clean();
 	header("Location: $url");
 	exit();
-} 
+}
 ?>
 
 <!DOCTYPE html>
@@ -84,7 +84,7 @@ body {font-family: "Lato", sans-serif}
                       <th>Order Histories</th>
                     </tr>
                   </thead>
-                  <tbody id="order_list">
+                  <tbody class="text-white"id="order_list">
                     <tr>
                       <td>dasda</td>
                     </tr>
