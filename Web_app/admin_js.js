@@ -118,13 +118,13 @@ var opt = document.createElement('option');
      cache:false,
      success: function(data){
        console.log("before json " +  data);
-       var tem1 = JSON.parse(data)
-       console.log("parse data" + tem1);
-       var str = tem1[0].items;
-       str.replace('"','');
-       var temp = JSON.parse(str);
-       console.log(temp);
-       data.forEach(table_row_order);
+       //var tem1 = JSON.parse(data)
+       //console.log("parse data" + tem1);
+       //var str = tem1[0].items;
+       //str.replace('"','');
+       //var temp = JSON.parse(str);
+       //console.log(temp);
+       //data.forEach(table_row_order);
 
        console.log(data);
        //data.forEach(table_row_order);
