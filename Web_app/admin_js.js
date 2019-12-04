@@ -118,12 +118,17 @@ var opt = document.createElement('option');
      cache:false,
      success: function(data){
        console.log("before json " +  data);
+<<<<<<< HEAD
        console.log("parse data" + JSON.parse(data));
        var str = data.items;
        str.replace('"','');
        var temp = JSON.parse(str);
        console.log(temp);
        data.forEach(table_row_order);
+=======
+       console.log(data);
+       //data.forEach(table_row_order);
+>>>>>>> c9779293702037df405e5a0cd9066f2c40369c44
     },
      error: function(err){
        alert("Error getting order list!");
