@@ -118,7 +118,7 @@ var opt = document.createElement('option');
      cache:false,
      success: function(data){
        console.log("before json " +  data);
-       var tem1 = JSON.parse(data)
+       var tem1 = JSON.parse(data);
        console.log(tem1);
        var str = tem1[0].items;
        //str.replace('"','');
