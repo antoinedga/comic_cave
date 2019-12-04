@@ -1,6 +1,5 @@
 <?php
-$page_title = 'Browse Comics';
-require ('mysqli_connect.php'); // Connect to the database.
+require ('../mysqli_connect.php'); // Connect to the database.
 $conn = OpenCon();
 $q = "SELECT
     comics.comic_name, comics.quantity,
