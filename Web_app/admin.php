@@ -43,6 +43,8 @@ body {font-family: "Lato", sans-serif}
 </style>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <!-- jQuery library -->
@@ -61,7 +63,8 @@ body {font-family: "Lato", sans-serif}
   </head>
   <body>
   <div class="w3-top">
-  <a href="../site_admin/logout.php" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa-sign-out"></i></a>
+  <a href="../site_admin/logout.php" class="w3-padding-large w3-hover-red w3-hide-small w3-right">$</i></a>
+  <a href="../index.php" class="w3-padding-large w3-hover-purple w3-hide-small w3-right"><<</a>
 </div>
 
 <div id="body" class="container-fluid row">
