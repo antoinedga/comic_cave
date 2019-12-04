@@ -141,7 +141,7 @@ var opt = document.createElement('option');
    + "<td>" + order.customer_email + "</td>"
    + "<td>" + order.total + "</td>";
   var tblBody = document.createElement("tbody");
-  table.innerHTML = tblHead + tblBody;
+  tbl.innerHTML = tblHead + tblBody;
 
   for(var i = 0 ;i < order.items.length; i++)
   {
@@ -151,6 +151,7 @@ var opt = document.createElement('option');
     name.innerHTML =order.items[i].comic;
     num.innerHTML = order.items[i].quantity;
   }
+  table.insertRow(index).insertCell(tbl);
 
 }
 
