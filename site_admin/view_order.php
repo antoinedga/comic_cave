@@ -1,7 +1,7 @@
 <?php
 require ('../mysqli_connect.php'); // Connect to the database.
 $conn = OpenCon();
-$q = "SELECT CONCAT('[',GROUP_CONCAT(JSON_OBJECT('comic',comics.comic_name, 'quantity', '"' + order_info.quantity + '"') SEPARATOR ','), ']') as items
+$q = "SELECT CONCAT('[',GROUP_CONCAT(JSON_OBJECT('comic',comics.comic_name, 'quantity', CONVERT(order_info.quantity, CHAR)) SEPARATOR ','), ']') as items
 ,orders.customer_email, orders.total,orders.order_id,
 orders.order_date FROM order_info, orders, comics
 WHERE orders.order_id=order_info.order_id
