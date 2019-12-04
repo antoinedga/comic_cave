@@ -2,7 +2,7 @@
 $test = array();
 require ('../mysqli_connect.php'); // Connect to the database.
 $conn = OpenCon();
-$q = "SELECT JSON_ARRAYAGG(ALL JSON_OBJECT('comic',comics.comic_name, 'quantity', order_info.quantity )) as items,
+$q = "SELECT JSON_OBJECT("itemz", JSON_ARRAYAGG(ALL JSON_OBJECT('comic',comics.comic_name, 'quantity', order_info.quantity ))) as items,
     orders.customer_email,
     orders.total,
     orders.order_id,
