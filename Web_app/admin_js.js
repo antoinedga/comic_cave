@@ -119,7 +119,7 @@ var opt = document.createElement('option');
      success: function(data){
        data = JSON.parse(data);
        console.log(data);
-       data.forEach(table_for_order);
+       //data.forEach(table_for_order);
     },
      error: function(err){
        alert("Error getting order list!");
