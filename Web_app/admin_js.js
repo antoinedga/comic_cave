@@ -122,7 +122,7 @@ var opt = document.createElement('option');
        console.log(tem1);
        var str = tem1[0].items;
        //str.replace('"','');
-       var tem1[0].items = JSON.parse(str);
+       tem1[0].items = JSON.parse(str);
        console.log(tem1);
        //data.forEach(table_row_order);
 
