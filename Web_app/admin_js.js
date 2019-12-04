@@ -111,6 +111,47 @@ var opt = document.createElement('option');
      return false;
    });
 
+   // to view orders
+    function table_row_order_add(order){
+
+       // Find a <table> element with id="myTable":
+    var table = document.getElementById("order_list");
+    // Create an empty <tr> element and add it to the 1st position of the table:
+     var tbl = document.createElement("table");
+     var tblHead = tbl.createTHead();
+     var thRow = tblHead.insertRow(0);
+     var cell1 = thRow.insertCell(0);
+     var cell2 = thRow.insertCell(1);
+     var cell3 = thRow.insertCell(2);
+     cell1.innerHTML = "<th>Order Date</th>";
+     cell2.innerHTML = "<th>Email</th>";
+     cell3.innerHTML = "<th>Total</th>";
+
+
+     var thdata = tblHead.insertRow(1);
+     var cell1d = thdata.insertCell(0);
+     var cell2d = thdata.insertCell(1);
+     var cell3d = thdata.insertCell(2);
+
+     cell1.innerHTML = order.order_date ;
+     cell2.innerHTML = order.customer_email;
+     cell3.innerHTML =  order.total;
+
+
+     var tblBody = document.createElement("tbody");
+     tbl.appendChild(tblBody);
+
+     for(var i = 0; i < order.items.length; i++)
+     {
+       var row = tblBody.insertRow();
+       var name = row.insertCell(0);
+       var num = row.insertCell(1);
+       name.innerHTML =order.items[i].comic;
+       num.innerHTML = order.items[i].quantity;
+     }
+     $(tbl).appendTo($('#order_list'));
+   }
+   
  function table_for_order(){
     $.ajax({
      type: "GET",
@@ -132,47 +173,6 @@ var opt = document.createElement('option');
  function parse(data) {
    data.items = JSON.parse(data.items);
  }
-// to view orders
- function table_row_order_add(order){
-
-    // Find a <table> element with id="myTable":
- var table = document.getElementById("order_list");
- // Create an empty <tr> element and add it to the 1st position of the table:
-  var tbl = document.createElement("table");
-  var tblHead = tbl.createTHead();
-  var thRow = tblHead.insertRow(0);
-  var cell1 = thRow.insertCell(0);
-  var cell2 = thRow.insertCell(1);
-  var cell3 = thRow.insertCell(2);
-  cell1.innerHTML = "<th>Order Date</th>";
-  cell2.innerHTML = "<th>Email</th>";
-  cell3.innerHTML = "<th>Total</th>";
-
-
-  var thdata = tblHead.insertRow(1);
-  var cell1d = thdata.insertCell(0);
-  var cell2d = thdata.insertCell(1);
-  var cell3d = thdata.insertCell(2);
-
-  cell1.innerHTML = order.order_date ;
-  cell2.innerHTML = order.customer_email;
-  cell3.innerHTML =  order.total;
-
-
-  var tblBody = document.createElement("tbody");
-  tbl.appendChild(tblBody);
-
-  for(var i = 0; i < order.items.length; i++)
-  {
-    var row = tblBody.insertRow();
-    var name = row.insertCell(0);
-    var num = row.insertCell(1);
-    name.innerHTML =order.items[i].comic;
-    num.innerHTML = order.items[i].quantity;
-  }
-  $(tbl).appendTo($('#order_list'));
-}
-
 
  $(document).ready(function(){
    get_inventory();
