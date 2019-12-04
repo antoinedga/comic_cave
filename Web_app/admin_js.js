@@ -121,7 +121,7 @@ var opt = document.createElement('option');
        var tem1 = JSON.parse(data);
        tem1.forEach(parse);
        console.log(tem1);
-       //tem1.forEach(table_for_order);
+       tem1.forEach(table_for_order);
     },
      error: function(err){
        alert("Error getting order list!");
@@ -133,7 +133,7 @@ var opt = document.createElement('option');
    data.items = JSON.parse(data.items);
  }
 // to view orders
- function table_row_order(order, index){
+ function table_row_order(order){
 
     // Find a <table> element with id="myTable":
  var table = document.getElementById("order_list");
@@ -162,7 +162,7 @@ var opt = document.createElement('option');
   var tblBody = document.createElement("tbody");
   tbl.appendChild(tblBody);
 
-  for(var i = 0 ;i < order.items.length; i++)
+  for(var i = 0; i < order.items.length; i++)
   {
     var row = tblBody.insertRow();
     var name = row.insertCell(0);
