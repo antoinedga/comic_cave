@@ -122,8 +122,8 @@ var opt = document.createElement('option');
        console.log(tem1);
        var str = tem1[0].items;
        //str.replace('"','');
-       var temp = JSON.parse(str);
-       console.log(temp);
+       var tem1[0].items = JSON.parse(str);
+       console.log(tem1);
        //data.forEach(table_row_order);
 
        //data.forEach(table_row_order);
