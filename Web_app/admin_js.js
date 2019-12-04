@@ -29,7 +29,6 @@ function view_single_comic(id){
      cache:false,
      dataType:"json",
      success: function(data){
-       console.log(data);
        document.getElementById("comic_holder").innerHTML = data.comic_name;
        document.getElementById("art_holder").innerHTML = data.artist;
        document.getElementById("pub_holder").innerHTML = data.publisher;
@@ -312,8 +311,7 @@ var opt = document.createElement('option');
       var img = $('input[name="image"]').get(0).files[0];
       var formData = new FormData(document.getElementById("comicForm"));
       formData.append('image', img);
-      console.log(formData);
-
+      
     	 $.ajax({
     		type: "POST",
     		url: "../site_admin/add_comic.php",
