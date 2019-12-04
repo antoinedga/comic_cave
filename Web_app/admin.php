@@ -28,17 +28,17 @@ body {font-family: "Lato", sans-serif}
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #FFF; 
+  background: #FFF;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #000; 
+  background: #000;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #000; 
+  background: #000;
 }
 </style>
 
@@ -108,9 +108,7 @@ body {font-family: "Lato", sans-serif}
                     </tr>
                   </thead>
                   <tbody class="text-white"id="order_list">
-                    <tr>
-                      <td>dasda</td>
-                    </tr>
+                    
                   </tbody>
                 </table>
               </div>
