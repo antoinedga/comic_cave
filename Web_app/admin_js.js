@@ -119,7 +119,7 @@ var opt = document.createElement('option');
      success: function(data){
        console.log(data);
        //data.items = $.parseJSON(data.items);
-       console.log(data['items']);
+       console.log(data[0]);
        //data.forEach(table_row_order);
     },
      error: function(err){
