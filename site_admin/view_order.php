@@ -1,8 +1,7 @@
 <?php
 require ('../mysqli_connect.php'); // Connect to the database.
 $conn = OpenCon();
-$q = "SELECT GROUP_CONCAT(comics.comic_name SEPARATOR ', '),
-GROUP_CONCAT(order_info.quantity SEPARATOR ', '),
+$q = "SELECT GROUP_CONCAT(CONCAT('{comic:"',comics.comic_name, '", quantity:"', order_info.quantity, '"}' )) as items,
 orders.customer_email, orders.total,
 orders.order_date FROM order_info, orders, comics
 WHERE orders.order_id=order_info.order_id
