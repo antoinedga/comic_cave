@@ -121,7 +121,7 @@ var opt = document.createElement('option');
        var tem1 = JSON.parse(data);
        console.log(tem1);
        tem1.forEach(parse);
-       //data.forEach(table_row_order);
+       tem1.forEach(table_for_order);
     },
      error: function(err){
        alert("Error getting order list!");
