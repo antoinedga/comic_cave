@@ -1,9 +1,7 @@
 <?php # dashboard for admins
 session_start();
 $page_title = 'Welcome!';
-
 if (!isset($_SESSION['first_name'])) {
-
 	$url = '../index.php';
 	ob_end_clean();
 	header("Location: $url");
