@@ -18,11 +18,11 @@ if (mysqli_num_rows($r) <= 0)
     printf("no rows??\n");
 }
 $json = mysqli_fetch_all ($r, MYSQLI_ASSOC);
-$json['items'] = json_decode($json['items'], true, 4);
+$temp = json_decode($json['items'], true, 4);
 
 //$temp = json_decode(json_encode($json), true, 4);
 
-echo json_encode($json);
+echo json_encode($temp);
 // order in array
 mysqli_close($conn);
 ?>
