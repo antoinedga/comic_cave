@@ -1,4 +1,5 @@
 <?php # dashboard for admins
+/*
 session_start();
 $page_title = 'Welcome!';
 
@@ -8,7 +9,7 @@ if (!isset($_SESSION['first_name'])) {
 	ob_end_clean();
 	header("Location: $url");
 	exit();
-}
+} */
 ?>
 
 <!DOCTYPE html>
@@ -29,8 +30,6 @@ if (!isset($_SESSION['first_name'])) {
     	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
       <script src="./admin_js.js"></script>
-      <script type="text/javascript" src="./inputmask.js"></script>
-      <script type="text/javascript" src="./input.binding.js"></script>
       <link rel="stylesheet" href="admin.css">
     <title>Admin page</title>
   </head>
