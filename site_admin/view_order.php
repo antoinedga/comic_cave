@@ -20,6 +20,10 @@ if (mysqli_num_rows($r) <= 0)
 	printf("no rows??\n");
 }
 $json = mysqli_fetch_all ($r, MYSQLI_ASSOC);
+// while ($row = $json->fetch_assoc())
+// {
+//	;
+//}
 echo json_encode($json);
 // order in array
 mysqli_close($conn);
