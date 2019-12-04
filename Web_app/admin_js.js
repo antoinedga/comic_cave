@@ -128,7 +128,7 @@ function table_row_order_add(order){
      cell3.innerHTML = "<th>Total</th>";
 
 
-     var thdata = tblHead.insertRow();
+     var thdata = table.insertRow();
      var cell1d = thdata.insertCell(0);
      var cell2d = thdata.insertCell(1);
      var cell3d = thdata.insertCell(2);
@@ -138,18 +138,14 @@ function table_row_order_add(order){
      cell3.innerHTML =  order.total;
 
 
-     var tblBody = document.createElement("tbody");
-     tbl.appendChild(tblBody);
-
      for(var i = 0; i < order.items.length; i++)
      {
-       var row = tblBody.insertRow();
+       var row = table.insertRow();
        var name = row.insertCell(0);
        var num = row.insertCell(1);
        name.innerHTML =order.items[i].comic;
        num.innerHTML = order.items[i].quantity;
      }
-     $(tbl).appendTo($('#order_list'));
    }
 
  function table_for_order(){
