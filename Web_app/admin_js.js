@@ -112,7 +112,7 @@ var opt = document.createElement('option');
    });
 
    // to view orders
-    function table_row_order_add(order){
+function table_row_order_add(order){
 
        // Find a <table> element with id="myTable":
     var table = document.getElementById("order_list");
@@ -151,7 +151,7 @@ var opt = document.createElement('option');
      }
      $(tbl).appendTo($('#order_list'));
    }
-   
+
  function table_for_order(){
     $.ajax({
      type: "GET",
@@ -162,7 +162,7 @@ var opt = document.createElement('option');
        var tem1 = JSON.parse(data);
        tem1.forEach(parse);
        console.log(tem1);
-       tem1.forEach(table_for_order_add);
+       tem1.forEach(table_row_order_add);
     },
      error: function(err){
        alert("Error getting order list!");
