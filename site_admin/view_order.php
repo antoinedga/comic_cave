@@ -16,10 +16,10 @@ function rowChange($value, $key)
 {
 	if ($key == 'items')
 	{
-		$temp = clone $value;
+		//$temp = clone $value;
 		$value = json_encode((object) null);
-		settype($value, "array");
-		$value = json_decode($temp);
+		//settype($value, "array");
+		//$value = json_decode($temp);
 	}
 }
 
