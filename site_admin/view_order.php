@@ -1,9 +1,13 @@
 <?php
 require ('../mysqli_connect.php'); // Connect to the database.
 $conn = OpenCon();
-$q = "SELECT JSON_ARRAYAGG(JSON_OBJECT('comic',comics.comic_name, 'quantity', order_info.quantity )) as items
-,orders.customer_email, orders.total,orders.order_id,
-orders.order_date FROM order_info, orders, comics
+$q = "SELECT 
+	JSON_ARRAYAGG(JSON_OBJECT('comic',comics.comic_name, 'quantity', order_info.quantity )) as items,
+	orders.customer_email, 
+	orders.total,
+	orders.order_id,
+	orders.order_date 
+FROM order_info, orders, comics
 WHERE orders.order_id=order_info.order_id
 AND comics.comic_id=order_info.comic_id";
 
