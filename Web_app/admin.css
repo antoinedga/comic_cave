@@ -34,3 +34,6 @@ td, th{
 #order_info{
  color: white;
 }
+#order_info table{
+  height: 200px;
+}
