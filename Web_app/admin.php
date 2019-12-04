@@ -1,4 +1,6 @@
+/*
 <?php # dashboard for admins
+/*
 session_start();
 $page_title = 'Welcome!';
 
@@ -9,7 +11,8 @@ if (!isset($_SESSION['first_name'])) {
 	header("Location: $url");
 	exit();
 }
-?>
+*/
+ ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
