@@ -120,7 +120,7 @@ var opt = document.createElement('option');
      dataType:"json",
      success: function(data){
        console.log(data);
-       data.forEach(table_row_order);
+       //data.forEach(table_row_order);
     },
      error: function(err){
        alert("Error getting order list!");
