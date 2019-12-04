@@ -26,11 +26,10 @@ while ($row = mysql_fetch_array($result))
 {
 	$order = array("comic_name" => $row['comic'], "quantity" => $row['quantity']);
 	echo $order;
-	$result[$row['order_id']] = array("customer_email" => $row['order'], "total" => $row['total'], 
-	"order_date" => $row['order_date']);
-	$result[$row['order_id']]['item'][] = $order;
-	echo $result;
 }
+
+$json = mysqli_fetch_all($r, MYSQLI_ASSOC);
+
 echo json_encode($result);
 
 // order in array
