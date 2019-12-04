@@ -117,8 +117,9 @@ var opt = document.createElement('option');
      url: "../site_admin/view_order.php",
      cache:false,
      success: function(data){
-       console.log("before json " +  data);
        data = JSON.parse(data);
+       console.log(data);
+       data.forEach(table_for_order);
     },
      error: function(err){
        alert("Error getting order list!");
