@@ -20,17 +20,7 @@ if (mysqli_num_rows($r) <= 0)
 $temp = array();
 $json = mysqli_fetch_all ($r, MYSQLI_ASSOC);
 
-$constants = get_defined_constants(true);
-$json_errors = array();
-foreach ($constants["json"] as $name => $value) {
-    if (!strncmp($name, "JSON_ERROR_", 11)) {
-        $json_errors[$value] = $name;
-    }
-}
-
-// Show the errors for different depths.
 $temp = json_decode($json, true, 4);
-echo 'Last error: ', $json_errors[json_last_error()], PHP_EOL, PHP_EOL;
 
 echo json_encode($temp);
 // order in array
