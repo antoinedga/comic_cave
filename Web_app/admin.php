@@ -1,31 +1,18 @@
-
 <?php # dashboard for admins
-/*
 session_start();
 $page_title = 'Welcome!';
-
 if (!isset($_SESSION['first_name'])) {
-
 	$url = '../index.php';
 	ob_end_clean();
 	header("Location: $url");
 	exit();
 }
-*/
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <style>
-body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
-</style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -46,11 +33,8 @@ body {font-family: "Lato", sans-serif}
     <title>Admin page</title>
   </head>
   <body>
-  <div class="w3-top">
-  <a href="./site_admin/logout.php" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa-sign-out"></i></a>
-</div>
 <div id="body" class="container-fluid row">
-      <div id="left" class="w3-black col-3 align-items-center border border-left-0 padding" style="height:100vh">
+      <div id="left" class="col-3 align-items-center border border-left-0 padding ">
         <div class="top-left mb-3">
           <h2>Functionality</h2>
         </div>
@@ -89,7 +73,7 @@ body {font-family: "Lato", sans-serif}
                       <th>Order Histories</th>
                     </tr>
                   </thead>
-                  <tbody id="order_list" class="text-white">
+                  <tbody id="order_list">
                     <tr>
                       <td>dasda</td>
                     </tr>
@@ -125,8 +109,8 @@ body {font-family: "Lato", sans-serif}
             </table>
           </div>
         </div>
-        </div>
     </div>
+</div>
 
 <!-- for all the modals -->
 <!-- Modal -->
@@ -152,6 +136,7 @@ body {font-family: "Lato", sans-serif}
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         <button type="submit" id="submit" class="btn btn-primary">Add</button>
+      </div>
     </div>
   </form>
   </div>
@@ -180,169 +165,4 @@ body {font-family: "Lato", sans-serif}
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         <button type="submit" id="submit" class="btn btn-primary">Add</button>
       </div>
-  </form>
-  </div>
-</div>
-
-
-<div  class="modal fade" id="add_publisher" tabindex="-1" role="dialog" aria-labelledby="adding_publisher" aria-hidden="true">
-  <div  class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="adding_publisher">Adding Publisher</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <form id="publisherForm" name="publisher"  method="post">
-        <div class="modal-body">
-          <div class="form-group">
-            <label for="input_publisher">Publisher</label>
-            <input type="text" class="form-control" name="publisher_name"/>
-          </div>
-        </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="submit" id="submit" class="btn btn-primary">Add</button>
-      </div>
-  </form>
-  </div>
-</div>
-
-
-<div class="modal fade" id="add_comic" tabindex="-1" role="dialog" aria-labelledby="add_comic_label" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="add_comic_label">Add a Comic</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-      <!-- comic name, image(upload). artist, writer, Publisher, price, quantity, description, released, recommended -->
-      <form enctype="multipart/form-data" id="comicForm" name="comic" method="post">
-          <div class="form-group">
-            <label for="comic_name">Comic Name:</label><input class="form-control" type="text" name="comic_name" value="">
-          </div>
-          <div class="form-group">
-            <label for="image_upload">Image</label>
-            <input type="file" class="form-control-file" name="image"/>
-          </div>
-          <div class="form-group">
-            <label for="artist_selecter">Artist</label>
-                  <select class="form-control" id="artist_selecter" name="artist">
-
-                  </select>
-          </div>
-
-          <div class="form-group">
-            <label for="writer_selecter">Writer</label>
-                  <select class="form-control" id="writer_selecter" name="writer">
-
-                  </select>
-          </div>
-          <div class="form-group">
-            <label for="publisher_selecter">Publisher</label>
-                  <select class="form-control" id="publisher_selecter" name="publisher">
-
-                  </select>
-          </div>
-          <div class="form-group">
-            <label for="Price">Price</label>
-            <input type="number" class="form-control text-left" name="price">
-          </div>
-          <div class="form-group">
-            <label for="quanity">Quantity</label>
-            <input class="form-control" type="number" min="0" name="quan" placeholder="0" value="">
-          </div>
-          <div class="form-group">
-            <label for="desription">Description</label>
-            <textarea name="description" class="form-control"></textarea>
-          </div>
-          <div class="form-group">
-            <label for="release">Release?</label>
-            <div class="form-group">
-                  <label class="radio-inline">
-                  <input type="radio" name="rel" value="1">Released
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="rel" value="0">Not Release
-                </label>
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="recommendation">Recommended</label>
-            <div class="form-group">
-                  <label class="radio-inline">
-                  <input type="radio" name="rec" value="1">YES
-                </label>
-                <label class="radio-inline">
-                  <input type="radio" name="rec" value="0" >NO
-                </label>
-            </div>
-
-          </div>
-
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        <button type="submit" id="submit" class="btn btn-primary">Add</button>
-      </div>
-    </form>
-  </div>
     </div>
-  </div>
-
-  <div class="modal fade" id="view_comic" tabindex="-1" role="dialog" aria-labelledby="view_comic_single" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="view_comic_header">View Detail</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-        <!-- comic name, image(upload). artist, writer, Publisher, price, quantity, description, released, recommended -->
-            <div class="form-group">
-              <label for="comic_name">Comic Name:</label>
-              <label id="comic_holder"></label>
-            </div>
-            <div class="form-group">
-              <label for="artist_selecter">Artist</label>
-              <label id="art_holder"></label>
-            </div>
-
-            <div class="form-group">
-              <label for="writer_selecter">Writer</label>
-              <label for=""id="wri_holder"></label>
-            </div>
-            <div class="form-group">
-              <label for="publisher_selecter">Publisher</label>
-              <label id="pub_holder"></label>
-            </div>
-            <div class="form-group">
-              <label for="Price">Price</label>
-              <label id="price_holder"></label>
-            </div>
-            <div class="form-group">
-              <label for="quanity">Quantity</label>
-                <label id="quan_holder"></label>
-            </div>
-            <div class="form-group">
-              <label for="desription">Description</label>
-              <textarea id="description" class="form-control" disabled></textarea>
-            </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-      </div>
-
-
-  </body>
-</html>
