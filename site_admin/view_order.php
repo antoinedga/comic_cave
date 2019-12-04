@@ -31,6 +31,7 @@ if ($r)
 		$result[$row['order_id']] = array("customer_email" => $row['order'], "total" => $row['total'], 
 		"order_date" => $row['order_date']);
 		$result[$row['order_id']]['item'][] = $order;
+		echo $result;
 	}
 	echo json_encode($result);
 }
