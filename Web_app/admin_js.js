@@ -120,8 +120,8 @@ var opt = document.createElement('option');
      dataType:"json",
      success: function(data){
        console.log(data);
-       data.items = $.parseJSON(data.items);
-       data.forEach(table_row_order);
+       //data.items = $.parseJSON(data.items);
+       //data.forEach(table_row_order);
     },
      error: function(err){
        alert("Error getting order list!");
@@ -238,6 +238,7 @@ var opt = document.createElement('option');
  			//$("#artist").html(response)
  			$("#add_artist").modal('hide');
       alert( "Successfully added an Artist");
+      location.reload(true);
  		},
  		error: function(){
  			alert("Error");
@@ -263,6 +264,7 @@ var opt = document.createElement('option');
   			//$("#artist").html(response)
   		$("#add_author").modal('hide');
        alert("Successfully added an Writer");
+       location.reload(true);
   		},
   		error: function(){
   			alert("Error adding writer");
@@ -289,6 +291,7 @@ var opt = document.createElement('option');
   			//$("#artist").html(response)
   		$("#add_publisher").modal('hide');
         alert( "Successfully added a Publisher");
+        location.reload(true);
   		},
   		error: function(){
   			alert("Error adding publisher");
@@ -323,6 +326,7 @@ var opt = document.createElement('option');
     			//$("#artist").html(response)
     		$("#add_comic").modal('hide');
         alert( "Successfully added a comic");
+        location.reload(true);
     		},
     		error: function(err){
     			alert(err);
