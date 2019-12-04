@@ -15,6 +15,14 @@ if (!isset($_SESSION['first_name'])) {
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -36,7 +44,7 @@ if (!isset($_SESSION['first_name'])) {
   </head>
   <body>
 <div id="body" class="container-fluid row">
-      <div id="left" class="col-3 align-items-center border border-left-0 padding ">
+      <div id="left" class="w3-black col-3 align-items-center border border-left-0 padding" style="height:100vh">
         <div class="top-left mb-3">
           <h2>Functionality</h2>
         </div>
@@ -111,8 +119,8 @@ if (!isset($_SESSION['first_name'])) {
             </table>
           </div>
         </div>
+        </div>
     </div>
-</div>
 
 <!-- for all the modals -->
 <!-- Modal -->
@@ -138,7 +146,6 @@ if (!isset($_SESSION['first_name'])) {
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         <button type="submit" id="submit" class="btn btn-primary">Add</button>
-      </div>
     </div>
   </form>
   </div>
@@ -167,7 +174,6 @@ if (!isset($_SESSION['first_name'])) {
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         <button type="submit" id="submit" class="btn btn-primary">Add</button>
       </div>
-    </div>
   </form>
   </div>
 </div>
@@ -194,7 +200,6 @@ if (!isset($_SESSION['first_name'])) {
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         <button type="submit" id="submit" class="btn btn-primary">Add</button>
       </div>
-    </div>
   </form>
   </div>
 </div>
@@ -274,7 +279,6 @@ if (!isset($_SESSION['first_name'])) {
 
           </div>
 
-      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
         <button type="submit" id="submit" class="btn btn-primary">Add</button>
