@@ -1,4 +1,5 @@
 <?php
+$test = array();
 require ('../mysqli_connect.php'); // Connect to the database.
 $conn = OpenCon();
 $q = "SELECT JSON_ARRAYAGG(JSON_OBJECT('comic',comics.comic_name, 'quantity', order_info.quantity ) as json) as items,
@@ -21,7 +22,8 @@ if (mysqli_num_rows($r) <= 0)
 $json = mysqli_fetch_all ($r, MYSQLI_ASSOC);
 while ($row = $json->fetch_assoc())
 {
-	$row['items'] = json_decode($row[items]);
+	$test = json_decode($row['items']);
+	$row['items'] = $test;
 }
 echo json_encode($json);
 // order in array
