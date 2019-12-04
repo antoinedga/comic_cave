@@ -89,7 +89,7 @@ body {font-family: "Lato", sans-serif}
                       <th>Order Histories</th>
                     </tr>
                   </thead>
-                  <tbody id="order_list">
+                  <tbody id="order_list" class="text-white">
                     <tr>
                       <td>dasda</td>
                     </tr>

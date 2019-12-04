@@ -145,7 +145,7 @@ var opt = document.createElement('option');
 
  // Add some text to the new cells:
  comicName.innerHTML = order.comic_name;
- quantity.innerHTML = order.quanity;
+ quantity.innerHTML = order.quantity;
  email.innerHTML = order.customer_email;
  total.innerHTML = order.total;
  orderDate.innerHTML = order.order_date;
