@@ -29,10 +29,10 @@ foreach ($constants["json"] as $name => $value) {
 }
 
 // Show the errors for different depths.
-var_dump(json_decode($json, true, 4));
+$temp = json_decode($json, true, 4);
 echo 'Last error: ', $json_errors[json_last_error()], PHP_EOL, PHP_EOL;
 
-echo json_encode($json);
+echo json_encode($temp);
 // order in array
 mysqli_close($conn);
 ?>
