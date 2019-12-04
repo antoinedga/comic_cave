@@ -5,6 +5,13 @@
 session_start();
 $page_title = 'Login';
 
+if (isset($_SESSION['first_name'])) {
+	$url = '../Web_app/admin.php';
+	header("Location: $url");
+	exit();
+}
+
+
 $loggedin = false;
 $error = false;
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

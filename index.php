@@ -12,22 +12,43 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <link rel="stylesheet" href="home.css">
 <style>
 body {font-family: "Lato", sans-serif}
 .mySlides {display: none}
+
+/* width */
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #000; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #FFF; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #FFF; 
+}
 </style>
 <body>
 
 <!-- Navbar -->
 <div class="w3-top">
   <div class="w3-bar w3-black w3-card">
-    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+
     <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
     <a href="#up" class="w3-bar-item w3-button w3-padding-large w3-hide-small">UPCOMING RELEASES</a>
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
   </div>
-  <a href="./site_admin/login.php" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa-sign-in"></i></a>
+  <a href="./site_admin/login.php" class="w3-padding-large w3-hover-purple w3-hide-small w3-right">>></i></a>
 </div>
 
 <!-- Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links) -->
@@ -41,25 +62,25 @@ body {font-family: "Lato", sans-serif}
 
 
   <!-- Home Section -->
-  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="cc">
     <h2 class="w3-wide">COMIC CAVE</h2>
     <p class="w3-opacity"><i>Download our app to browse our inventory</i></p>
-    <p class="w3-center">We carry comics from multiple publishers. <br/>If we don't have what you're looking for, fill out the contact form with your request and we will order it for you!</p>
-    <div class="w3-row w3-padding-32">
-		<div class="w3-col" style="width:20%">
-        	<img src="./pub_img/dc.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+    <p class="w3-center">We carry comics from multiple publishers and we are constantly updating our inventory. <br/>If we don't have what you're looking for email us your request and we will do what we can to order it for you!</p>
+    <div class="w3-row w3-padding-64">
+		<div class="w3-col " style="width:20%">
+        	<img src="./pub_img/dc.png" class="w3-round w3-margin-bottom" alt="DC">
 		</div>
       	<div class="w3-col" style="width:20%">
-        	<img src="./pub_img/dh.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+        	<img src="./pub_img/dh.jpg" class="w3-round w3-margin-bottom" alt="Dark Horse">
       	</div>
 		<div class="w3-col" style="width:20%">
-        	<img src="./pub_img/marvel.png" class="w3-round" alt="Random Name" style="width:60%">
+        	<img src="./pub_img/marvel.png" class="w3-round" alt="Marvel">
 		</div>
 		<div class="w3-col" style="width:20%">
-        	<img src="./pub_img/idw.png" class="w3-round" alt="Random Name" style="width:60%">
+        	<img src="./pub_img/idw.png" class="w3-round" alt="IDW">
 		</div>
 		<div class="w3-col" style="width:20%">
-        	<img src="./pub_img/viz.jpg" class="w3-round" alt="Random Name" style="width:60%">
+        	<img src="./pub_img/viz.jpg" class="w3-round" alt="Viz">
       	</div> 
     </div>
   </div>
@@ -69,15 +90,15 @@ body {font-family: "Lato", sans-serif}
     	<div class="w3-container w3-content w3-padding-64" style="max-width:800px">
       		<h2 class="w3-wide w3-center">UPCOMING RELEASES</h2>
       		<p class="w3-opacity w3-center"><i>Remember to check in on Wednesdays!</i></p><br>
-      			<div class="w3-row-padding w3-padding-32" style="margin:0 -16px">
+      			<div class="w3-row-padding w3-padding-10" >
 					<div class= "tablecontent">	
-						<table class="a">
+						<table class="a" align="center">
 							<tbody id='table_content1'>
 								<tr>
-                              	<th>Publisher</th>
-                             	<th>Title</th>
-                             	<th>Date</th>
-                          		</tr>
+									<th>Publisher</th>
+									<th>Title</th>
+									<th>Date</th>
+								</tr>
 							</tbody>
 						</table>
 					</div>
@@ -97,10 +118,10 @@ body {font-family: "Lato", sans-serif}
 			</div>
 			<div class="w3-col m6">
       		  <div class="w3-half">
-        		<img src="./pub_img/play.png" class="w3-round w3-margin-bottom" alt="google play" style="width:60%">
+        		<img src="./pub_img/play.png" class="w3-round w3-margin-bottom" alt="google play">
         		</div>
               <div class="w3-half">
-        		<img src="./pub_img/apple.jpg" class="w3-round w3-margin-bottom" alt="apple" style="width:60%">
+        		<img src="./pub_img/apple.png" class="w3-round w3-margin-bottom" alt="apple">
         	  </div>
       		</div>
       </div>
